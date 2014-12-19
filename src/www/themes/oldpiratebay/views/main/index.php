@@ -18,7 +18,7 @@
 
                 $tags = LCategory::$categoriesTags;
                 foreach($tags as $tagId => $tag) { ?>
-                    <label title="<?=$tag;?>"><input name="iht" type="checkbox" value="<?=$tagId;?>"><?= $tag; ?></label>
+                    <label title="<?= CHtml::encode($tag);?>"><input name="iht" type="checkbox" value="<?=$tagId;?>"><?= CHtml::encode($tag); ?></label>
                 <?php
                 }
                 ?>
