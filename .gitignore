@@ -11,5 +11,6 @@ src/runtime/
 src/web/assets/
 src/protected/runtime/
 src/www/assets/
+src/protected/vendor
 
 *.log *.logs log/ logs/

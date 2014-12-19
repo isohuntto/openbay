@@ -1,1 +1,0 @@
-phpunit --verbose framework
