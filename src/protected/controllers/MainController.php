@@ -183,7 +183,7 @@ class MainController extends Controller
             }
         }
 
-        $this->render('list', array(i
+        $this->render('list', array(
             'torrents' => $torrents,
             'search' => $searchModel->words,
             'categoryTag' => $iht,
