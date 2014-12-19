@@ -1,0 +1,13 @@
+{
+    "name": "isohunt/thepiratebay",
+    "description": "Bit Torrent search engine",
+    "version": "1.0.0",
+    "type": "project",
+    "minimum-stability": "stable",
+    "license": "GPL-3.0",
+    "homepage": "http://oldpiratebay.org/",
+    "require": {
+        "php": ">=5.5.0",
+        "yiisoft/yii": "1.1.*"
+    }
+}

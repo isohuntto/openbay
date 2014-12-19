@@ -1,0 +1,12 @@
+# Do not remove this line or mod_rewrite rules and search engine friendly URLs will stop working
+RewriteEngine on
+RewriteBase /
+
+RedirectMatch 403 /\..*$
+
+RewriteRule ^(.*)$ /src/www/$1
+
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-d
+
+RewriteRule ^/src/www/(.*)$ /src/www/index.php?r=main/$1 [L]

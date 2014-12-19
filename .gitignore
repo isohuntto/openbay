@@ -1,0 +1,15 @@
+nbproject
+.idea
+
+assets/*
+!assets/.gitignore
+protected/runtime/*
+!protected/runtime/.gitignore
+protected/data/*.db
+themes/classic/views/
+src/runtime/
+src/web/assets/
+src/protected/runtime/
+src/www/assets/
+
+*.log *.logs log/ logs/

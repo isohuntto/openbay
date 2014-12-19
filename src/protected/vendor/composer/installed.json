@@ -1,0 +1,88 @@
+[
+    {
+        "name": "yiisoft/yii",
+        "version": "1.1.15",
+        "version_normalized": "1.1.15.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii.git",
+            "reference": "022a51d34ad2c95db2b77b2075e98f5dd78b08e0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii/zipball/022a51d34ad2c95db2b77b2075e98f5dd78b08e0",
+            "reference": "022a51d34ad2c95db2b77b2075e98f5dd78b08e0",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.1.0"
+        },
+        "time": "2014-06-30 00:14:27",
+        "bin": [
+            "framework/yiic"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Qiang Xue",
+                "email": "qiang.xue@gmail.com",
+                "homepage": "http://www.yiiframework.com/",
+                "role": "Founder and project lead"
+            },
+            {
+                "name": "Alexander Makarov",
+                "email": "sam@rmcreative.ru",
+                "homepage": "http://rmcreative.ru/",
+                "role": "Core framework development"
+            },
+            {
+                "name": "Maurizio Domba",
+                "homepage": "http://mdomba.info/",
+                "role": "Core framework development"
+            },
+            {
+                "name": "Carsten Brandt",
+                "email": "mail@cebe.cc",
+                "homepage": "http://cebe.cc/",
+                "role": "Core framework development"
+            },
+            {
+                "name": "Wei Zhuo",
+                "email": "weizhuo@gmail.com",
+                "role": "Project site maintenance and development"
+            },
+            {
+                "name": "Sebastián Thierer",
+                "email": "sebas@artfos.com",
+                "role": "Component development"
+            },
+            {
+                "name": "Jeffrey Winesett",
+                "email": "jefftulsa@gmail.com",
+                "role": "Documentation and marketing"
+            },
+            {
+                "name": "Timur Ruziev",
+                "email": "resurtm@gmail.com",
+                "homepage": "http://resurtm.com/",
+                "role": "Core framework development"
+            },
+            {
+                "name": "Paul Klimov",
+                "email": "klimov.paul@gmail.com",
+                "role": "Core framework development"
+            }
+        ],
+        "description": "Yii Web Programming Framework",
+        "homepage": "http://www.yiiframework.com/",
+        "keywords": [
+            "framework",
+            "yii"
+        ]
+    }
+]

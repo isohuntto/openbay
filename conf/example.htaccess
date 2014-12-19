@@ -1,0 +1,22 @@
+# Part 1. ".htaccess" for CPanel under src folder
+RewriteEngine on
+RewriteBase /
+
+RedirectMatch 403 /\..*$
+
+RewriteRule ^(.*)$ /src/www/$1
+
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-d
+
+RewriteRule ^/src/www/(.*)$ /src/www/index.php?r=main/$1 [L]
+
+# Part 2. ".htaccess" for application under src/www folder
+RewriteEngine on
+
+RedirectMatch 403 /\..*$
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule . index.php

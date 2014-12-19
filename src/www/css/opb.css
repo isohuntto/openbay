@@ -1,0 +1,651 @@
+
+body {
+	background: #fff;
+	margin: 10px;
+	font: 0.7em/1.3em Verdana, Arial, Helvetica, sans-serif;
+        text-align: center;
+}
+
+#q {
+    text-align: left;
+}
+
+table.table-torrents { font-size: 1em; border-collapse: collapse; border-spacing:1px; margin:0 auto; text-align: left; width: 100%; min-width: 400px; max-width: 900px; margin-bottom: 20px;}
+table.table-torrents a { border: 0; }
+table.table-torrents a:hover { text-decoration: underline; }
+thead a { color: #000; font-weight: bold; }
+thead a:hover { border: 0; }
+thead th { background: #3579BC; color: white;}
+thead th a { color: white !important;}
+table.table-torrents th, table.table-torrents td { padding: 3px; border: 1px solid #fff; }
+table.table-torrents tr { background: #c7d4df;}
+table.table-torrents tr.alt { background: #F2ECE7; }
+table.table-torrents tr:hover { background: #dee9f3; }
+table.table-torrents td.vertTh { font-weight:bold; color: #7B563A; }
+table.table-torrents img { border:0; margin-left:2px; margin-right:2px; }
+table.table-torrents img.dl { width:9px; height:11px; }
+table.table-torrents img.co { width:11px; height:9px; }
+
+table#details { margin: 40px 0 0; font-size: .9em; width: 100%; border-collapse: collapse; }
+th#details, td#details { padding: 1px 4px; border-bottom: 1px solid #fff; border-right: 1px solid #fff; background: #F6F1EE; }
+thead#details th#details { background: #D2B9A6; }
+tbody#details th#details { color: #7B563A; }
+
+h2 { font-size: 1.1em; line-height: 1.5em; text-align: right; padding: 2px 5px; margin: 0; border-bottom: 1px solid #D2B9A6; background: #F6F1EE; font-weight: normal;
+clear: both; }
+h2 span { font-weight: bold; float: left; font-size: 1.1em; }
+
+#detailsframe #title div { font-weight: bold; float: right; font-size: 0.9em; padding-right: 20px; }
+
+#details { padding: 10px; padding-left: 20px; padding-top: 0; background: #dee9f3; }
+#details h3 { margin: 0; border-bottom: 1px solid #D2B9A6; font-size: 1.3em; }
+#details h3 em { font-style: normal; text-decoration: underline; }
+#details h3 a   { text-decoration: none; border-bottom: none; }
+#details h4 { margin: 20px 0 0 0; color: #7B563A; font-size: 1.2em; }
+#details p { margin: 10px 0 0 10px; text-align: left; }
+#details dl { text-align: left; float: left; margin: 10px 40px 10px 0px; }
+#details dt { float: left; font-weight: bold; padding: 0 5px 0 0; color: #7B563A; border-bottom: 1px dashed #E8DCD2; clear: both; }
+#details dd { padding: 0 0 0 40px; border-bottom: 1px dashed #E8DCD2; }
+#details .col1 { width: 307px; }
+#details dl.col2 { clear: right; width: 260px;  }
+#details dl.col2 dd { padding: 0 0 0 70px; }
+#details dd img { width: 59px; height: 10px; }
+
+#details pre {
+       white-space: -moz-pre-wrap;
+       white-space: -pre-wrap;
+       white-space: -o-pre-wrap;
+       white-space: pre-wrap;
+       word-wrap: break-word;
+       font-size:      11px;
+       font-family: "Courier New", Courier, monospace;
+}
+
+#detailsouterframe {
+	position: relative; margin: 0 auto; width: 680px; text-align: right;
+	padding: 0;
+}
+
+#detailsouterframe #delete { text-align: right; padding-right: 4px; width: 20px; background: #D2B9A6; float: right; clear: both; font-size: 0.8em; font-weight: bold; }
+
+#delete :hover { border: 1px dashed red; }
+#delete a { text-decoration: none; border: 0; color: #ff0000; }
+
+#detailsframe { clear: both; border-top: 1px solid #fff; background:#dee9f3; text-align: left;
+overflow: hidden; margin-top: 10px; }
+#detailsframe #title { padding: 6px 0 8px 20px; font-size: 1.2em; text-align: left; font-weight: bold;
+letter-spacing: 0.07em; border-bottom: 1px solid #fff; }
+
+#detailsframe #title { height: 1%; background: #D2B9A6; }
+#detailsframe #title { height: 1%; background: #3579BC; color: white;}
+#detailsframe #title a { color: white !important;}
+
+div.title { height: 1%; background: #3579BC; color: white;padding: 6px 0 8px 5px; font-size: 1.2em; text-align: left; font-weight: bold; margin-top: 20px;
+letter-spacing: 0.07em; border-bottom: 1px solid #fff; }
+div.title a { color: white !important;}
+
+#detailsframe #title div { font-weight: bold; float: right; font-size: 0.9em; padding-right: 20px; }
+
+#details { padding: 10px; padding-left: 20px; padding-top: 0; background: #dee9f3; }
+#details h3 { margin: 0; border-bottom: 1px solid #D2B9A6; font-size: 1.3em; }
+#details h3 em { font-style: normal; text-decoration: underline; }
+#details h3 a   { text-decoration: none; border-bottom: none; }
+#details h4 { margin: 20px 0 0 0; color: #7B563A; font-size: 1.2em; }
+#details p { margin: 10px 0 0 10px; text-align: left; }
+#details dl { text-align: left; float: left; margin: 10px 40px 10px 0px; }
+#details dt { float: left; font-weight: bold; padding: 0 5px 0 0; color: #7B563A; border-bottom: 1px dashed #E8DCD2; clear: both; }
+#details dd { padding: 0 0 0 40px; border-bottom: 1px dashed #E8DCD2; }
+#details .col1 { width: 307px; }
+#details dl.col2 { clear: right; width: 260px;  }
+#details dl.col2 dd { padding: 0 0 0 70px; }
+#details dd img { width: 59px; height: 10px; }
+
+#details #CommentDiv { text-align: left; clear: both; background-color: #f6f1ee; width: 620px; height: 130px; padding:
+10px; margin-top: 10px; margin-bottom: 20px; }
+#details #filelist { width: 100%; border: 0; }
+
+#filelistContainer { margin: 3em 0 1em 0; min-height: 50px; border: 1px solid #D2B9A6; background: #fff; padding: 10px; clear: left; }
+
+.nfo { margin: 1em 0 1em 0px; width: 600px; min-height: 50px; border: 1px solid #3579BC; background: #fff; padding: 10px; font-size: 12px; font-family: "Courier New",
+Courier, monospace; clear: left; line-height: .9em; }
+
+p.info { padding: 10px 0 0; font-size: .9em; clear: both; }
+p.info textarea { padding: 3px; font-family: verdana, Arial, Helvetica, sans-serif; font-size: 11px; width: 300px; height: 100px; }
+p.info input { margin: 4px 7px 0 0; }
+
+.download { clear: both; }
+.download a { font-size: 1.2em; color: #0f3c68 !important; font-weight: bold; text-transform: uppercase; border-bottom: 1px dotted #80C780;
+       background: url(/img/icons/download.png) 0 0px no-repeat;padding: 0 0 0 13px;
+}
+.download a:hover{ color: #008E00; text-decoration: none; border-bottom: none;}
+
+table#details { margin: 40px 0 0; font-size: .9em; width: 100%; border-collapse: collapse; }
+th#details, td#details { padding: 1px 4px; border-bottom: 1px solid #fff; border-right: 1px solid #fff; background: #F6F1EE; }
+thead#details th#details { background: #D2B9A6; }
+tbody#details th#details { color: #7B563A; }
+
+div.pagination {text-align: center;}
+div.pagination ul {}
+div.pagination li {display: inline-block;}
+div.pagination li a {margin-left: 10px;}
+div.pagination li.active a {font-weight: bold;}
+
+/*
+The Pirate Bay - main style sheet for thepiratebay.se
+*/
+
+/* HTML5 - set default style to new HTML5 elements (for compability with older browsers) */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+{ display: block; }
+
+
+/* GLOBAL
+***************************************************/
+
+a.img {
+    text-decoration: none;
+    border: 0;
+    border-bottom: 0 !important;
+}
+
+#srchform {
+    margin-left: 90px;
+}
+body {
+	background: #fff;
+	margin: 10px;
+	font: 0.7em/1.3em Verdana, Arial, Helvetica, sans-serif;
+}
+
+#searchBtn {
+    width: 263px;
+    height: 40px;
+    background: url('/img/buttons.png') 0 0 no-repeat;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+#luckyBtn {
+    width: 263px;
+    height: 40px;
+    background: url('/img/buttons.png') 0 -40px no-repeat;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+input[name=q] {
+    //width: 100%;
+    height: 40px;
+    border: 0;
+    background: #c7d4df;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -o-border-radius: 3px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: 16px;
+    font-weight: normal;
+    text-indent: 16px;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+}
+
+input[name=q]:focus {
+    background: #dee9f3;
+}
+
+input.topsrch[name=q] {
+  height: 38px;
+  width: 500px;
+  float: left;
+  margin-top: 2px;
+}
+/* links */
+a, a:link, a:visited, a:focus {
+	color: #009;
+	text-decoration: none;
+    border-bottom: 1px dotted #000;
+}
+a:hover { border-bottom: 1px solid #009; } /* default link hover style */
+#icons a, h1 a:hover, .sp, tr a, #logo a { border-bottom: 0 !important } /* however, we dont want dotted links here.. */
+table a:hover { text-decoration: underline; }
+.download a:hover { text-decoration: none !important;}
+
+img, img:hover { border-bottom: 0 !important; }
+/* tables */
+table {
+	border-collapse: collapse;
+	empty-cells: show
+}
+th {
+	border-right: 1px solid #fff;
+    padding: 4px;
+}
+td { padding: 4px; }
+
+
+/* lists */
+ul { list-style:none; }
+
+/* misc */
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+/* forms */
+fieldset { border:0; }
+legend { display:none; }
+
+/* messages */
+#error {
+	border: 1px solid #F6F1EE;
+	border-width: 1px 0 1px 0;
+	color: #c00;
+	margin: 2em auto;
+	padding: 9px 20px;
+	color:#444;
+}
+#error span {
+	display:block;
+	font-weight: bold;
+	margin:3px 0 5px 0;
+	color: #a00;
+}
+#info {}
+
+/* headings */
+h1 {
+	max-width: 1000px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+h2 {
+	width: 98%;
+	background: #F6F1EE;
+	border-bottom: 1px solid #D2B9A6;
+	padding: 4px 0.5%;
+	clear: both;
+	font-size: 125%;
+}
+
+/* top navigation */
+#logo a
+{
+	background: url('/img/latest.png') 0px 0px no-repeat;
+	height: 86px;
+	width: 82px;
+	margin: -12px 10px 0 0;
+	float: left;
+}
+#logo span { display: none; }
+header nav
+{
+	margin: -5px 0 0 -8px;
+	padding: 0;
+	float: left;
+}
+header nav ul
+{
+	padding: 0;
+	margin: 0;
+}
+header nav ul li
+{
+	float: left;
+	padding: 0 9px;
+	line-height: 11px;
+	border-right: 1px solid #333;
+}
+header nav ul li:last-child { border: 0; }
+
+/* top search */
+#topsearch
+{
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+#topsearch form>input { margin-bottom: 5px; }
+#topsearch label {
+    padding: 0;
+    margin: 0 5px 0 0;
+}
+#topsearch label input {
+	position: relative;
+	top: 5px;
+	margin: 0 3px 0 0;
+	vertical-align: top;
+}
+
+/* ads */
+.ads,
+.ads iframe {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	z-index: -999;
+}
+#top468 {
+	float: right;
+	margin: -15px 1em -25px 0;
+	width: 468px;
+}
+#right-sky,
+#left-sky {
+	margin-top: 2em;
+	width: 180px;
+}
+#right-sky { float: right; }
+#left-sky { float: left; }
+#right-sky iframe {
+    margin-left: 20px;
+    text-align: left;
+}
+#left-sky iframe {
+    margin-right: 20px;
+    text-align: right;
+    float: right;
+}
+#bottom728,
+#top728 {
+	margin: auto;
+	width: 728px;
+}
+
+/* footer */
+footer {
+    margin: 0em auto;
+    margin-top: 30px;
+	text-align: center;
+}
+footer #stats {
+	color: #666;
+	font-size: .9em;
+	clear: both;
+	margin: 2em 0;
+}
+.rss span, .kopimi span { display: none; }
+.rss {
+	background-position: 0px -124px;
+	width:16px;
+	height: 16px;
+}
+.kopimi {
+	background-position: -60px -111px;
+	width:21px;
+	height: 21px;
+	margin: 1em 0 0 0;
+}
+
+/* PAGE SPECIFIC
+***************************************************/
+
+/* front page */
+#fp {
+	display: block;
+	margin: 0 auto 20px auto;
+	text-align: center;
+}
+#fp h1 a {
+	background: url('/img/tpb.png') 0 -70px no-repeat;
+        margin: 0 auto;
+        display: block;
+        border: 0;
+        width: 450px;
+        height: 310px;
+        outline: none !important;
+}
+#fp h1 a span { visibility: hidden; }
+
+#fp #bnr a {
+	height:205px;
+	width:205px;
+	position: absolute;
+	top:0;
+	right:0;
+    border: 0;
+}
+#fp #bnr img { border: 0; }
+#fp #navlinks { white-space: nowrap; }
+#fp #navlinks a { margin: 0 2px; }
+
+#fp #inp input {
+    padding: 3px;
+	width: 1000px;
+}
+.https_form { background: url('/img/icon-https.gif') no-repeat 100% 50% #ffffe0; }
+
+#fp #inp span {
+    width: 1em;
+	line-height:12px;
+	float:right;
+	font-size:9px;
+    position: absolute;
+    padding: 0 15px;
+}
+#fp #howdl a {
+    font-size: 13px;
+    line-height: 20px;
+    border: 0;
+}
+
+
+
+/* details & upload */
+#details,
+#upload {
+	background: none;
+	margin: 2em auto;
+	padding: 0 1.5em 0.5em 1.5em;
+	max-width: 625px;
+	/*max-width: 694px;*/
+	overflow: hidden;
+}
+#details h1, #upload h1 {
+	margin: 0 -1.5em;
+	padding: .4em 1em .6em 1.5em;
+	font-size: 1.2em;
+	font-weight: bold;
+	letter-spacing: 0.07em;
+	background: #D2B9A6;
+	border-bottom: 1px solid #fff;
+}
+#details h1 span { float: right; }
+#details dl {
+	float: left;
+	margin: .9em 3%;
+	width: 43%;
+	clear: right;
+	line-height: 140%;
+}
+#details dt {
+	float: left;
+	font-weight: bold;
+	color: #7B563A;
+}
+#details #col1 dd { padding: 0 0 0 20%; }
+#details #col2 dd { padding: 0 0 0 30%; }
+#delete a, #check a, #checked, #edit a {
+	font-weight: bold;
+	padding: 3px 9px;
+	background: #D2B9A6;
+}
+#details #write_comment_div {
+	display: none;
+	text-align: right;
+	padding: 2em 0 0 0;
+	clear: both;
+}
+#details #write_comment_div textarea { resize: both; }
+#social {
+    padding: 10px 0;
+    float: left;
+    line-height:12px;
+}
+#social * {
+    float: left;
+    margin-right: 5px;
+    border: 0;
+}
+#social .flattr { float: right; }
+#details .download, #details #social {
+    clear: both;
+    width: 460px;
+}
+#details .download a {
+    padding-left: 20px;
+	font: bold 1.2em/2.5em Verdana;
+	color: #090;
+	margin-right: 10px;
+	text-transform: uppercase;
+}
+#details #nfo pre, #upload .nfo {
+	margin: 0;
+	padding: 10px;
+	border: 1px solid #D2B9A6;
+	background: #fff;
+	width: 600px;
+	min-height: 50px;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 11px;
+	line-height: .9em;
+	white-space: pre-wrap;
+    /*word-wrap: break-word; # works with most browsers, but is not valid anymore */
+    overflow-wrap: break-word;
+}
+#torrentpic {
+	float: right;
+	margin: 1em 1em 0 0;
+}
+#comments { font-size: 0.9em; }
+#comments header { margin: 1.5em 0 .3em 0; }
+#details #comments time { color: #BB967A; }
+#details #comments time:before { content: 'at '; }
+#details #comments time:after { content: ':'; }
+#details #comments div { background: #fff; }
+#comments h2 {
+	color: #7B563A;
+	background: none;
+	padding: 0;
+	border: 0;
+	margin: 1em 0;
+}
+
+/* upload */
+#upload table { width: 100%; }
+#upload td {
+	border-bottom: 1px dashed #E8DCD2;
+	padding: 0.7em 1em 0.9em 0;
+	width: 20%;
+}
+#upload tr:nth-last-child(-n+2) td { border:0; } /* no borders between and after descripton and submit on upload page */
+#upload td+td {
+	width: 70%;
+	border-color: #Efe3D9;
+}
+#upload label {
+	font-weight: bold;
+	color: #7B563A;
+}
+#upload #tname, #upload #torrent { width: 83.5%; }
+#upload .moreinfo {
+	font-size: 80%;
+	display: block;
+	position: absolute;
+}
+#upload select { width:200px; }
+#upload input#torrent  { width:300px; }
+#upload textarea.nfo {
+	overflow: auto;
+	resize: vertical;
+	margin-top: 10px;
+	min-height: 300px;
+}
+
+/* browse table */
+table#list {
+	width: 100%;
+	margin: 2em auto;
+	max-width: 999px;
+}
+table#list th {
+	background: #D2B9A6;
+	text-align: left;
+	height: 1em;
+	white-space: nowrap;
+}
+table#list th a { color: #000; }
+table#list tr { background: #F6F1EE; }
+table#list tr:hover { background: #fff; }
+.tar { text-align: right; } /* what's this again? */
+.tal { text-align: right; } /* what's this again? */
+#viewswitch { font-weight: normal; }
+#viewswitch a { font-weight: bold; }
+
+table#list span.has-cover {
+    background-position: 0 -111px;
+    width: 12px;
+}
+table#list span.has-comment { background-position: -13px -111px; }
+table#list a.dl-torrent span,
+table#list a.dl-magnet span,
+table#list span.has-comment span,
+table#list span.has-cover span { display: none; }
+table#list .dl-torrent { margin: 0 -1px -3px 0; }
+table#list .dl-magnet { margin: 0 -0px -2px 0; }
+
+
+
+/* forms */
+#login, #register, #recover {
+	margin: 0 auto 3em auto;
+	max-width: 330px;
+}
+.form input {
+    float: right;
+}
+.form input[type="submit"] {
+    margin-top: 0.5em;
+}
+.form_msg {
+    text-align: right;
+}
+
+/* settings (profile) */
+#settings table {
+    margin: 0 auto 3em auto;
+    border: 0px solid #333;
+}
+#settings table tr > * {
+    text-align: left;
+    padding: 0.2em 1em;
+}
+
+
+/* public profile */
+#pubpro {
+	border: 1px solid #333;
+	min-height: 300px;
+}
+#pubpro ul {
+	text-align: center;
+}
+#pubpro ul li {
+	float: left;
+	padding: 0 5px;
+}
+#pubpro #pic {
+	padding: 5px;
+	border: 1px solid #f4f4f4;
+	float: left;
+	clear: both;
+}
+
