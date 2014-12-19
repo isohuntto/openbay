@@ -1,12 +1,12 @@
 <div id="detailsouterframe">
 
     <div id="detailsframe">
-        <div id="title"><a href="<?= $torrent->getUrl(); ?>" class="link-textcolor vm"><?= $torrent->name; ?> torrent</a></div>
+        <div id="title"><a href="<?= $torrent->getUrl(); ?>" class="link-textcolor vm"><?= CHtml::encode($torrent->name); ?> torrent</a></div>
 
         <div id="details">
             <dl class="col1">
                 <dt>Type:</dt>
-                <dd><a href="<?= $this->createUrl('main/search', array('iht' => $torrent->getCategoryTagId(), 'age' => 0)); ?>"><?= ucfirst($torrent->getCategoryTag()); ?></a></dd>
+                <dd><a href="<?= $this->createUrl('main/search', array('iht' => $torrent->getCategoryTagId(), 'age' => 0)); ?>"><?= CHtml::encode(ucfirst($torrent->getCategoryTag())); ?></a></dd>
 
                 <dt>Files:</dt>
                 <dd><?= $torrent->files_count ?: "N/A" ; ?></dd>
@@ -21,7 +21,7 @@
                 <dd><?= number_format($torrent->leechers, 0, '.', ' '); ?></dd>
 
                 <br>
-                <dt>Info Hash:</dt><dd><?= $torrent->hash; ?></dd>
+                <dt>Info Hash:</dt><dd><?= CHtml::encode($torrent->hash); ?></dd>
             </dl>
 
             <br><br>
