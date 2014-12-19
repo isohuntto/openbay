@@ -100,7 +100,7 @@ $(function(){
 				synced[ pos ].done = true;
 		
 				if ( pos == 0 || !synced[ pos-1 ] )
-					for ( var i = pos; i < synced.length && synced[i].done; i++ ) {
+					for ( var i = pos, l=synced.length ; i < l && synced[i].done; i++ ) {
 						if ( synced[i].error ) synced[i].error.apply( jQuery, syncedData[i].error );
 						if ( synced[i].success ) synced[i].success.apply( jQuery, syncedData[i].success );
 						if ( synced[i].complete ) synced[i].complete.apply( jQuery, syncedData[i].complete );
