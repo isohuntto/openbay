@@ -104,28 +104,28 @@ class MainController extends Controller
 
     protected function checkSearchRequest() {
         $uri = Yii::app()->getRequest()->getRequestUri();
-        if (preg_match('#ihq=([^&]+)#', $uri, $matches)) {
-            $ihq = $matches[1];
-            $filtered = preg_replace('#(\s|%20)#ui', '+', $ihq);
+        if (preg_match('#q=([^&]+)#', $uri, $matches)) {
+            $q = $matches[1];
+            $filtered = preg_replace('#(\s|%20)#ui', '+', $q);
             $filtered = preg_replace('#%2B#ui', '+', $filtered);
             $filtered = preg_replace('#\+{2,}#', '+', $filtered);
             $filtered = trim($filtered, '+');
-            $filteredUri = str_replace($ihq, $filtered, $uri);
+            $filteredUri = str_replace($q, $filtered, $uri);
             if ($uri !== $filteredUri) {
                 $this->redirect($filteredUri);
             }
         }
     }
 
-    public function actionSearch($ihq = null, $iht = null, $status = null)
+    public function actionSearch($q = null, $iht = null, $status = null)
     {
-        $queryLength = mb_strlen($ihq, 'UTF-8');
+        $queryLength = mb_strlen($q, 'UTF-8');
         // search by hash
         $is_hash = false;
 
-        if (40 == $queryLength && preg_match('#^[0-9a-f]{40}$#i', $ihq)) {
+        if (40 == $queryLength && preg_match('#^[0-9a-f]{40}$#i', $q)) {
             $is_hash = true;
-            if ($torrent = Yii::app()->torrentsService->getTorrentByHash($ihq)) {
+            if ($torrent = Yii::app()->torrentsService->getTorrentByHash($q)) {
                 Yii::app()->request->redirect($torrent->getUrl());
             }
         }
@@ -137,8 +137,8 @@ class MainController extends Controller
                 $iht = LCategory::getCategoryTag($iht);
             }
         }
-        if (!empty($ihq)) {
-            $this->pageTitle = ucfirst($ihq) . ' Torrents Search Results | ' . Yii::app()->name . ' Torrent Search Engine';
+        if (!empty($q)) {
+            $this->pageTitle = ucfirst($q) . ' Torrents Search Results | ' . Yii::app()->name . ' Torrent Search Engine';
         } elseif (!empty($iht)) {
             $this->pageTitle = mb_convert_case($iht, MB_CASE_TITLE, 'utf-8') . ' Torrents | ' . Yii::app()->name . ' Torrent Search Engine';
         }
@@ -150,7 +150,7 @@ class MainController extends Controller
         }
 
         $searchModel = new SearchForm('simple');
-        $searchModel->words = $ihq;
+        $searchModel->words = $q;
         $searchModel->tags = $iht;
         $searchModel->age = Yii::app()->getRequest()->getQuery('age', 0);
         $searchModel->popular = empty($_GET['popular']) ? 0 : 1;
@@ -183,7 +183,7 @@ class MainController extends Controller
             }
         }
 
-        $this->render('list', array(
+        $this->render('list', array(i
             'torrents' => $torrents,
             'search' => $searchModel->words,
             'categoryTag' => $iht,
