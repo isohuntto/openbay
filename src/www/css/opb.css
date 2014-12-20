@@ -193,6 +193,7 @@ input[name=q] {
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
     -o-transition: all .5s ease;
+    outline: none;
 }
 
 input[name=q]:focus {
