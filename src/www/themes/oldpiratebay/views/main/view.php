@@ -28,8 +28,9 @@
             <div style="position:relative;">
                 <div class="download">
                     <a style="background-image: url('/img/icons/magnet.png');" href="<?= $torrent->getMagnetLink(); ?>" title="MAGNET LINK">&nbsp;MAGNET LINK</a>
-                    <?php if ($torrent->getDownloadUrl()) : ?>
-                    <a href="<?= $torrent->getDownloadUrl(); ?>" title=".TORRENT FILE">.TORRENT FILE</a>
+                    <?php $downloadUrl = $torrent->getDownloadUrl();
+                          if ($downloadUrl): ?>
+                    <a href="<?= $downloadUrl ?>" title=".TORRENT FILE">.TORRENT FILE</a>
                     <?php endif; ?>
                 </div>
                 <div class="nfo">
@@ -38,8 +39,8 @@
                 <br>
                 <div class="download">
                     <a style="background-image: url('/img/icons/magnet.png');" href="<?= $torrent->getMagnetLink(); ?>" title="MAGNET LINK">&nbsp;MAGNET LINK</a>
-                    <?php if ($torrent->getDownloadUrl()) : ?>
-                    <a href="<?= $torrent->getDownloadUrl(); ?>" title=".TORRENT FILE">.TORRENT FILE</a>
+                    <?php if ($downloadUrl) : ?>
+                    <a href="<?= $downloadUrl ?>" title=".TORRENT FILE">.TORRENT FILE</a>
                     <?php endif; ?>
                 </div>
 

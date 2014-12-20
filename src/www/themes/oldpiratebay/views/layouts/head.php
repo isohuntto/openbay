@@ -17,8 +17,10 @@
 </head>
 <body>
 <script>
-    $(function() {$('input[type=checkbox]').click(function() {
-            $('input[type=checkbox]').attr('checked', false);
+    $(function() {
+        var inputCheckBox = $('input[type=checkbox]');
+        inputCheckBox.click(function() {
+            inputCheckBox.attr('checked', false);
             $(this).attr('checked', true);
         });
     });
