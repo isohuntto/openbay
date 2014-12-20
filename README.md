@@ -1,30 +1,37 @@
 openbay
 =======
-We, the team that brought you https://isohunt.to and http://oldpiratebay.org are bringing you the next step in torrent evolution. The Pirate Bay source code.
+We, the team that brought you [isoHunt](https://isohunt.to) and
+[oldpiratebay.org](http://oldpiratebay.org) bring you the next step in torrent
+evolution. The Pirate Bay source code.
 
-Torrent sites like Isohunt and The Pirate Bay gave us lessons that would be a crime to ignore. Individual torrent sites are easy targets. 
-Pirate Bay open source code will give absolutely anyone with minimal knowledge of how internet and websites work and some server basic equipment, opportunity to create Pirate Bay copy on his own domain.
+Torrent sites like isoHunt and The Pirate Bay gave us lessons that would be a
+crime to ignore. Individual torrent sites are easy targets. This code will
+enable individuals with minimal IT skills, and basic server equipment to create
+a Pirate Bay clone on their own domain.
 
 Installation
 =======
 
 **Step 1. Download source.**
 
-Download the latest engine version at openbay.isohunt.to or at GitHub project web page. 
+Download the latest version at openbay.isohunt.to or at the GitHub project page.
 
-**Step 2. Upload source to chosen hosting.**
+**Step 2. Upload to your web host.**
 
-Upload the source code to desirable web hosting following the web hosting guide (in common case there is a CPanel tool) or just use FTP
+Upload the source code to your host using the hosting guide
+(in common case there is a CPanel tool) or just use FTP
 
 **Step 3. Unzip source to hosting folder (optional)**
 
-This step is quite optional. It depends on your web hosting. Some hostings can unzip sources automatically some of them allows you to make it manually.
+Some hosts can unzip sources automatically, others require you to do it
+manually.
 
 **Step 4. Set hosting environment (optional)**
 
 *Apache*
 
-This option **is available by default** in original source pack. You can see it at `conf/example.htaccess`
+This option **is available by default** in original source pack. You can see it
+at `conf/example.htaccess`
 
 *Nginx*
 
@@ -36,17 +43,21 @@ This config is available in original source pack at `/conf/example.nginx.conf`
 
 *MySQL* (**advanced mode**)
 
-Before the wizard will run you need to create a data base, the schema of the data base will be created by the wizard. Dump here `/src/protected/data/schema.mysql.sql`
+Before the wizard will run you need to create a database, the wizard will create
+the schema. The dump is at `/src/protected/data/schema.mysql.sql`
 
 **Step 5. Wizard**
 
-Congrats! Now you can open your domain name with any browser and follow the guide provided there. As default you will need to put page title which will appears on all your webpages.
+Open your website and follow the guide provided there. By default, you will need
+to put a title which will appear on all the site's pages.
 
 [Detailed instruction here](https://github.com/isohuntto/openbay/wiki/shared-hosting-guide)
 
 How to contribute?
-=======
+==================
 
-Report issues , submit pull requests to fix problems, or to create summarized and documented feature requests (preferably with pull requests that implement the feature). 
+Report issues, submit pull requests to fix problems, or to create summarized and
+documented feature requests (preferably with code that implements the
+feature).
 
 **Feel free to contribute to the project in any way you like!**
