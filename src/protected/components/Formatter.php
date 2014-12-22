@@ -5,14 +5,16 @@ class Formatter extends CFormatter
     public function formatReverseSize($size = 0, $type = 'b')
     {
         $type = mb_strtolower($type);
-        if ($type == 'kb') {
-            return $size * 1024;
-        } else if ($type == 'mb') {
-            return $size * 1024 * 1024;
-        } else if ($type == 'gb') {
-            return $size * 1024 * 1024 * 1024;
-        } else {
-            return $size;
+
+        switch($type) {
+            case 'kb':
+                return size * 1024;
+            case 'mb':
+                return $size * pow(1024, 2);
+            case 'gb':
+                return $size * pow(1024, 3);
+            default:
+                return $size;
         }
     }
 
