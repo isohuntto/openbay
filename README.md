@@ -1,9 +1,9 @@
-openbay
+Openbay
 =======
 We, the team that brought you https://isohunt.to and http://oldpiratebay.org are bringing you the next step in torrent evolution. The Pirate Bay source code.
 
-Torrent sites like Isohunt and The Pirate Bay gave us lessons that would be a crime to ignore. Individual torrent sites are easy targets. 
-Pirate Bay open source code will give absolutely anyone with minimal knowledge of how internet and websites work and some server basic equipment, opportunity to create Pirate Bay copy on his own domain.
+Torrent sites like Isohunt and The Pirate Bay taught us a lesson that would be a crime to ignore. Individual torrent sites are easy targets. 
+Pirate Bay open source code will give absolutely anyone with minimal knowledge of networking, website design, and server operations the opportunity to create a Pirate Bay copy on his/her own domain.
 
 Installation
 =======
@@ -36,7 +36,7 @@ This config is available in original source pack at `/conf/example.nginx.conf`
 
 *MySQL* (**advanced mode**)
 
-Before the wizard will run you need to create a data base, the schema of the data base will be created by the wizard. Dump here `/src/protected/data/schema.mysql.sql`
+Before the wizard will run you need to create a database, the schema of the database will be created by the wizard. Dump here `/src/protected/data/schema.mysql.sql`
 
 **Step 5. Wizard**
 
