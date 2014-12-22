@@ -9,7 +9,7 @@ class AHttpRequest extends CHttpRequest
      * @var boolean
      */
 
-    private $$ipAddress = null;
+    private $ipAddress = null;
 
     public $countryCode = '';
 
