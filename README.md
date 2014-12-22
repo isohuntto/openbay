@@ -2,8 +2,8 @@ openbay
 =======
 We, the team that brought you https://isohunt.to and http://oldpiratebay.org are bringing you the next step in torrent evolution. The Pirate Bay source code.
 
-Torrent sites like Isohunt and The Pirate Bay gave us lessons that would be a crime to ignore. Individual torrent sites are easy targets. 
-Pirate Bay open source code will give absolutely anyone with minimal knowledge of how internet and websites work and some server basic equipment, opportunity to create Pirate Bay copy on his own domain.
+Torrent sites like Isohunt and The Pirate Bay taught us lessons that would be a crime to ignore. Individual torrent sites are easy targets. 
+Pirate Bay open source code will give absolutely anyone with minimal knowledge of how internet and websites work and some server basic equipment, an opportunity to create Pirate Bay copy on their own domain.
 
 Installation
 =======
@@ -14,11 +14,11 @@ Download the latest engine version at openbay.isohunt.to or at GitHub project we
 
 **Step 2. Upload source to chosen hosting.**
 
-Upload the source code to desirable web hosting following the web hosting guide (in common case there is a CPanel tool) or just use FTP
+Upload the source code to a desirable web hosting following the web hosting guide (in common case there is a CPanel tool) or just use FTP.
 
 **Step 3. Unzip source to hosting folder (optional)**
 
-This step is quite optional. It depends on your web hosting. Some hostings can unzip sources automatically some of them allows you to make it manually.
+This step is quite optional. It depends on your web hosting. Some hostings can unzip sources automatically some of them allow you to make it manually.
 
 **Step 4. Set hosting environment (optional)**
 
@@ -36,7 +36,7 @@ This config is available in original source pack at `/conf/example.nginx.conf`
 
 *MySQL* (**advanced mode**)
 
-Before the wizard will run you need to create a data base, the schema of the data base will be created by the wizard. Dump here `/src/protected/data/schema.mysql.sql`
+Before running the wizard, you need to create a data base, the schema of the data base will be created by the wizard. Dump here `/src/protected/data/schema.mysql.sql`
 
 **Step 5. Wizard**
 
