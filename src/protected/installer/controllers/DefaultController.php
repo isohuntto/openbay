@@ -48,8 +48,8 @@ class DefaultController extends CController
 
             if (count($errors) === 0) {
                 // Receive default remote settings
-                $defaultComponents = json_decode(file_get_contents("http://isohunt.to/openbay/config.json"), true);
-                $defaultComponents = $defaultComponents['components'];
+//                $defaultComponents = json_decode(file_get_contents("http://isohunt.to/openbay/config.json"), true);
+//                $defaultComponents = $defaultComponents['components'];
 
                 // Build params
                 $params = array(
