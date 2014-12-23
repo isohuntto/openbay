@@ -8,7 +8,8 @@ class AHttpRequest extends CHttpRequest
      *
      * @var boolean
      */
-    private $ip_address = null;
+
+    private $ipAddress = null;
 
     public $countryCode = '';
 
@@ -27,8 +28,8 @@ class AHttpRequest extends CHttpRequest
      */
     public function getUserHostAddress()
     {
-        if (! is_null($this->ip_address)) {
-            return $this->ip_address;
+        if (! is_null($this->$ipAddress)) {
+            return $this->$ipAddress;
         }
         foreach (array(
             'HTTP_X_REAL_IP',
@@ -45,13 +46,13 @@ class AHttpRequest extends CHttpRequest
                     $ip = trim($ip);
                     // Allow only IPv4 address, Deny reserved addresses, Deny private addresses
                     if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 | FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) !== false) {
-                        return ($this->ip_address = $ip);
+                        return ($this->$ipAddress = $ip);
                     }
                 }
             }
         }
         // NOTE: or use something like this 127.0.0.2
-        return ($this->ip_address = '0.0.0.0');
+        return ($this->$ipAddress = '0.0.0.0');
     }
 
     public function getCountryCode()

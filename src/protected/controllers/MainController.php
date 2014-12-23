@@ -12,12 +12,6 @@ class MainController extends Controller
         $this->render('/errors/error404');
     }
 
-
-
-
-
-
-
     public function actionRecent()
     {
         $this->pageTitle = 'New Torrents | ' . Yii::app()->name . ' Torrent Search Engine';
