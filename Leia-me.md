@@ -1,10 +1,10 @@
 Openbay
 =======
-Nós, A equipe que trouxe pra você o https://isohunt.to e http://oldpiratebay.org estamos trazendo pra você o novo passo 
+Nós, A equipe que trouxe pra você o https://isohunt.to e http://oldpiratebay.org está trazendo pra você o novo passo 
 na evolução do torrent.
 
-Sites de torrent  como Isohunt e The Pirate Bay nos deu lições que seria um crime ignorar.
-Sites de torrent são alvos fáceis. O código aberto do Pirate Bay vai dar a qualquer um com mínimo de conhecimento  de 
+Sites de torrent como Isohunt e The Pirate Bay nos deu lições que seria um crime ignorar.
+Sites de torrent são alvos fáceis. O código aberto do Pirate Bay vai dar a qualquer um com mínimo de conhecimento de 
 como sites e equipamentos de servidores básicos funcionam, uma oportunidade de criar uma cópia do TPB em seu próprio 
 domínio.
 
