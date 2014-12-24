@@ -6,8 +6,8 @@
 ?>
 <div class="bs-docs-header" data-role="content">
     <div class="container">
-        <h1>Installer</h1>
-        <p>Pirate Bay source code is an open source website engine that allows you to create your own copy of Pirate Bay with minimal time and efforts spent.</p>
+        <h1>Openbay Installer</h1>
+        <p>Openbay is an open source website engine that allows you to create your own copy of The Pirate Bay with minimal time and effort.</p>
     </div>
 </div>
 
@@ -16,11 +16,11 @@
         <div class="col-md-9" role="main">
             <form role="form" method="post" action="">
             <div>
-                <h1 id="requirements" class="page-header">System requirements <small>Step 1 of 6</small></h1>
+                <h1 id="requirements" class="page-header">System Requirements <small>Step 1 of 6</small></h1>
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <h3>PHP Modules</h3>
-                        <p><span style="color: darkgreen">Green</span> color shows you the modules that your hosting have. <span style="color: darkred">Red</span> color indicates missing modules of your hosting environment. In case of missing some modules contact your hosting system administrator.</p>
+                        <p><span style="color: darkgreen">Green</span> shows you the modules that are available in your hosting environment. <span style="color: darkred">Red</span> indicates modules that are missing from your hosting environment. If you are missing modules, contact your hosts' systems administrator.</p>
                         <hr>
                         <?php foreach($requirements as $name => $exists): ?>
                             <div class="alert alert-<?= $exists ? 'success' : 'danger' ?>" role="alert">
@@ -33,10 +33,10 @@
             </div>
 
             <div>
-                <h1 id="general" class="page-header">General <small>Step 2 of 6</small></h1>
+                <h1 id="general" class="page-header">Site Name <small>Step 2 of 6</small></h1>
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <p>Enter name that will be title on every page.</p>
+                        <p>Enter a site name that will be used across all webpages served by Openbay.</p>
                         <hr>
                         <div class="form-group <?= !isset($errors['name']) ?: 'has-error' ?>">
                             <label for="name">Name</label>
@@ -60,7 +60,7 @@
                             <hr>
                             <div class="form-group <?= !isset($errors['dbHost']) ?: 'has-error' ?>">
                                 <label for="db-host">Host</label>
-                                <input name="Settings[dbHost]"  type="text" class="form-control" id="db-host" placeholder="126.0.0.1">
+                                <input name="Settings[dbHost]"  type="text" class="form-control" id="db-host" placeholder="127.0.0.1">
                             </div>
                             <div class="form-group">
                                 <label for="db-port <?= !isset($errors['dbPort']) ?: 'has-error' ?>">Port</label>
@@ -68,15 +68,15 @@
                             </div>
                             <div class="form-group">
                                 <label for="db-name <?= !isset($errors['dbName']) ?: 'has-error' ?>">Database</label>
-                                <input name="Settings[dbName]" type="text" class="form-control" id="db-name" placeholder="piratebay">
+                                <input name="Settings[dbName]" type="text" class="form-control" id="db-name" placeholder="DB Name">
                             </div>
                             <div class="form-group">
                                 <label for="db-user <?= !isset($errors['dbUser']) ?: 'has-error' ?>">Username</label>
-                                <input name="Settings[dbUser]" type="text" class="form-control" id="db-user" placeholder="root">
+                                <input name="Settings[dbUser]" type="text" class="form-control" id="db-user" placeholder="Username">
                             </div>
                             <div class="form-group">
                                 <label for="db-pass <?= !isset($errors['dbPassword']) ?: 'has-error' ?>">Password</label>
-                                <input name="Settings[dbPassword]" type="password" class="form-control" id="db-pass" placeholder="rootpass">
+                                <input name="Settings[dbPassword]" type="password" class="form-control" id="db-pass" placeholder="Password">
                             </div>
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                 <h1 id="cache" class="page-header">Cache <small>Step 5 of 6</small></h1>
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <p>Cache is a temporary file storage to help your site work faster.</p>
+                        <p>Cache is a temporary file storage that helps increase site preformance.</p>
                         <hr>
                         <p>
                             Use file cache <input name="Settings[enableFileCache]" type="checkbox" class="cache-switcher" data-size="mini" checked>
@@ -136,8 +136,9 @@
                 </div>
             </div>
             <div>
-                <h1 id="log" class="page-header">To finish press button!</h1>
+                <h1 id="log" class="page-header">Hit deploy to continue.</h1>
                 <p>
+                    Be sure to go over and check to make sure everything is as you would like it before continuing.<br>
                     <button type="submit" class="btn btn-success btn-lg <?= !$disableForm ? '' : 'disabled' ?>">Deploy</button>
                 </p>
             </div>
@@ -149,7 +150,7 @@
                         <a href="#requirements">System requirements</a>
                     </li>
                     <li>
-                        <a href="#general">General</a>
+                        <a href="#general">Site Name</a>
                     </li>
                     <li>
                         <a href="#database">Database</a>
@@ -164,7 +165,7 @@
                         <a href="#log">Log</a>
                     </li>
                     <li>
-                        <a href="#finish">To finish press button!</a>
+                        <a href="#finish">Hit deploy to continue.</a>
                     </li>
                 </ul>
             </div>
