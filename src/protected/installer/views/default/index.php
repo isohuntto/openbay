@@ -7,7 +7,7 @@
 <div class="bs-docs-header" data-role="content">
     <div class="container">
         <h1>Installer</h1>
-        <p>Pirate Bay source code is an open source website engine that allows you to create your own copy of Pirate Bay with minimal time and efforts spent.</p>
+        <p>Openbay is an open source replica of The Pirate Bay website engine that allows you to create your own copy of Pirate Bay with minimal time and effort to bring up!</p>
     </div>
 </div>
 
@@ -36,7 +36,7 @@
                 <h1 id="general" class="page-header">General <small>Step 2 of 6</small></h1>
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <p>Enter name that will be title on every page.</p>
+                        <p>Enter a site name that will be displayed on all site pages.</p>
                         <hr>
                         <div class="form-group <?= !isset($errors['name']) ?: 'has-error' ?>">
                             <label for="name">Name</label>
@@ -51,6 +51,11 @@
                     <div class="panel-body">
                         <p>
                             Database is very important. Content on your whole website depends on this choice. We can provide our hosted database by default. or you can enter your own database account data.
+<br>
+<br>
+<font color="red">
+At the current moment in time Isohunt has removed the config.json from their site, Turn this box to "off" and set it manually for now.
+</font>
                         </p>
                         <hr>
                         <p>
@@ -60,7 +65,7 @@
                             <hr>
                             <div class="form-group <?= !isset($errors['dbHost']) ?: 'has-error' ?>">
                                 <label for="db-host">Host</label>
-                                <input name="Settings[dbHost]"  type="text" class="form-control" id="db-host" placeholder="126.0.0.1">
+                                <input name="Settings[dbHost]"  type="text" class="form-control" id="db-host" placeholder="127.0.0.1">
                             </div>
                             <div class="form-group">
                                 <label for="db-port <?= !isset($errors['dbPort']) ?: 'has-error' ?>">Port</label>
@@ -87,8 +92,11 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <p>Sphinx is a search engine that finds torrents in the database. You can use our Sphinx by default or enter your own configuration.</p>
+<br>
+<font color="red">
+Do the same for the Sphinx config as well.</font>
                         <hr>
-                        <p>
+                        </p>
                             Use <b>our</b> sphinx configuration <input name="Settings[sphinxOurConfig]" type="checkbox" class="sphinx-settings-switcher" data-size="mini" checked>
                         </p>
                         <div class="sphinx-settings" style="display: none;">
