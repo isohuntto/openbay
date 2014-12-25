@@ -28,10 +28,10 @@
     <?php if (!$this->mainPage) : ?>
     <div id="header">
                     <form method="get" id="q" action="<?= $this->createUrl('main/search'); ?>">
-                    <a href="/" class="img" style="float: left; text-decoration: none;"><img src="/img/TPB_logo_small.png" id="TPBlogo" alt="The Pirate Bay"></a>
+                    <a href="<?= Yii::app()->createUrl('/'); ?>" class="img" style="float: left; text-decoration: none;"><img src="/img/TPB_logo_small.png" id="TPBlogo" alt="The Pirate Bay"></a>
                     <div id="srchform">
                         <div style="margin-bottom: 15px;">
-                            <b><a href="/" title="Search Torrents">Search Torrents</a></b>&nbsp;&nbsp;|&nbsp;
+                            <b><a href="<?= Yii::app()->createUrl('/'); ?>" title="Search Torrents">Search Torrents</a></b>&nbsp;&nbsp;|&nbsp;
                             <a href="<?= Yii::app()->createUrl('main/browse'); ?>" title="Browse Torrents">Browse Torrents</a>&nbsp;&nbsp;|&nbsp;
                             <a href="<?= Yii::app()->createUrl('main/recent'); ?>" title="Recent Torrent">Recent Torrents</a>
                         </div>

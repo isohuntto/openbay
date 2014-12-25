@@ -1,5 +1,5 @@
 <div id="fp">
-        <h1><a href="/" title="The Pirate Bay"><span>The Pirate Bay</span></a>
+        <h1><a href="<?= Yii::app()->createUrl('/'); ?>" title="The Pirate Bay"><span>The Pirate Bay</span></a>
 
 </h1>
 
