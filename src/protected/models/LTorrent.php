@@ -420,7 +420,7 @@ class LTorrent extends CActiveRecord
                 Yii::app()->cache->set($key, $torrentsIds);
             }
         } catch (Exception $e) {
-            Yii::log('getLastTorrentIdsByCategories failed. Exception: ' . $e->getMessage() . PHP_EOL . 'Trace: ' . $e->getTrace(), CLogger::LEVEL_ERROR);
+            Yii::log('getLastTorrentIdsByCategories failed. Exception: ' . $e->getMessage() . PHP_EOL . 'Trace: ' . $e->getTraceAsString(), CLogger::LEVEL_ERROR);
 
             if (YII_DEBUG) {
                 throw $e;
