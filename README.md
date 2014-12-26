@@ -28,20 +28,25 @@ manually.
 
 **Step 4. Set hosting environment (optional)**
 
-*Apache*
+**Apache**
+
+[Apache Wiki page](http://en.wikipedia.org/wiki/Apache_HTTP_Server)
 
 This option **is available by default** in original source pack. You can see it
 at `conf/example.htaccess`
 
-*Nginx*
+**Nginx**
+
+[Nginx Wiki page](http://en.wikipedia.org/wiki/Nginx)
 
 This config is available in original source pack at `/conf/example.nginx.conf`
 
-*Sphinx* (**advanced mode**)
-
+**Sphinx** (**advanced mode**)
 [Instruction here](https://github.com/isohuntto/openbay/wiki/sphinx)
 
-*MySQL* (**advanced mode**)
+**MySQL** (**advanced mode**)
+
+[MySQL Wiki page](http://en.wikipedia.org/wiki/MySQL)
 
 Before the wizard will run you need to create a database, the wizard will create
 the schema. The dump is at `/src/protected/data/schema.mysql.sql`
@@ -55,6 +60,7 @@ to put a title which will appear on all the site's pages.
 
 How to contribute?
 ==================
+[GitHub Contribution Guide](https://guides.github.com/activities/contributing-to-open-source/)
 
 Report issues, submit pull requests to fix problems, or to create summarized and
 documented feature requests (preferably with code that implements the
