@@ -49,4 +49,4 @@ Comment contribuer ?
 
 En signalant des problèmes, en soumettant des requêtes pour corriger des problèmes ou pour créer des fonctionnalités résumées et documentées (avec de préférence l'implémentation de cette fonctionnalité).
 
-**N'hésitez pas à contribuer au projet de n'importe quelle manière que vous souhaitez ! **
+**N'hésitez pas à contribuer au projet de n'importe quelle manière que vous souhaitez !**
