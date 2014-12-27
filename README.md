@@ -6,7 +6,7 @@ Torrent sites like isoHunt and The Pirate Bay gave us lessons that would be a cr
 
 We want to give you an opportunity to speak your mind, determine needs and be active participants in the evolution of the oldpiratebay.org. A lot of requests were received for a wide range of features but we want to emphasize the development process so we call to the colors of this enormous and devoted community to create new [features requests](https://openbay.uservoice.com/forums/279139-ideas) and code those features.
 
-We call out torrent community to join in to develop and enhance this engine to create a modern and advanced website that every user all around the world would want to use. 
+We call out the torrent community to join in to develop and enhance this engine to create a modern and advanced website that every user all around the world would want to use. 
 
 
 Installation
