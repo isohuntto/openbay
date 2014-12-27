@@ -44,11 +44,9 @@
                         <?php
 
                         $tags = LCategory::$categoriesTags;
-                        foreach($tags as $tagId => $tag) { ?>
+                        foreach($tags as $tagId => $tag) : ?>
                             <label title="<?=$tag;?>"><input name="iht" type="checkbox" value="<?=$tagId;?>"<?php if (Yii::app()->request->getParam('iht') == $tagId) : ?>checked<?php endif; ?>><?= $tag; ?></label>
-                        <?php
-                        }
-                        ?>
+                        <?php endforeach; ?>
                     </div>
             </form>
     </div>

@@ -17,11 +17,9 @@
                 <?php
 
                 $tags = LCategory::$categoriesTags;
-                foreach($tags as $tagId => $tag) { ?>
+                foreach($tags as $tagId => $tag) : ?>
                     <label title="<?= CHtml::encode($tag);?>"><input name="iht" type="checkbox" value="<?=$tagId;?>"><?= CHtml::encode($tag); ?></label>
-                <?php
-                }
-                ?>
+                <?php endforeach; ?>
            </p>
            <p id="subm">
                <input type="submit" title="Pirate Search" value="" accesskey="s" id="searchBtn"><font color="white">...........................</font>
