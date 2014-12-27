@@ -36,7 +36,7 @@
                             <a href="<?= Yii::app()->createUrl('main/recent'); ?>" title="Recent Torrent">Recent Torrents</a>
                         </div>
 
-                        <input type="search&quot;" class="inputbox topsrch" title="Piratesearch" name="q" placeholder="search here..." value="<?=  CHtml::encode(Yii::app()->request->getParam('q'));?>">
+                        <input type="search&quot;" class="inputbox topsrch" title="Pirate search" name="q" placeholder="search here..." value="<?=  CHtml::encode(Yii::app()->request->getParam('q'));?>">
                         <input id="searchBtn" value="" type="submit" class="submitbutton"><br>
 
 
