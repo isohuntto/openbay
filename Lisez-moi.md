@@ -1,6 +1,6 @@
 openbay
 =======
-Nous, l'équipe qui vous a apporté https://isohunt.to et http://oldpiratebay.org vous apportent la prochaine étape dans l'évolution du torrent. Le code source de "The Pirate Bay".
+Nous, l'équipe qui vous a apporté https://isohunt.to et http://oldpiratebay.org vous apportons la prochaine étape dans l'évolution du torrent. Le code source de "The Pirate Bay".
 
 Les sites de torrent tel qu'Isohunt et The Pirate Bay nous ont donné des leçons qu'il serait criminel d'ignorer. Les sites de torrent individuels sont des cibles faciles.
 Le code source libre de Pirate Bay donnera à absolument toutes les personnes avec un minimum de connaissances sur le fonctionnement d'internet et des sites web ainsi que le matériel de base d'un serveur, la possibilité de créer une copie de Pirate Bay sur son propre domaine. 
