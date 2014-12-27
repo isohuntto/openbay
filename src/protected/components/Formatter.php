@@ -8,7 +8,7 @@ class Formatter extends CFormatter
 
         switch($type) {
             case 'kb':
-                return size * 1024;
+                return $size * 1024;
             case 'mb':
                 return $size * pow(1024, 2);
             case 'gb':
