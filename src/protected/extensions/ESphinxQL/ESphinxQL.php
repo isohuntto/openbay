@@ -35,7 +35,7 @@
   $sphinxql = new SphinxQL();
 
   $result = $sphinxql->query('INSERT INTO realtime_index (id, title, content) VALUES ( 1, "title news", "content news" )');
-*/
+ */
 
 class ESphinxQL {
 
@@ -89,7 +89,6 @@ class ESphinxQL {
      */
     protected $_options = array();
 
-
     /**
      * Builds the query string from the information you've given.
      *
@@ -114,26 +113,21 @@ class ESphinxQL {
             }
         }
         unset($field);
-
         if (is_string($this->_search)) {
             $wheres[] = sprintf("MATCH(%s)", $this->_search);
         }
-
         foreach ($this->_wheres as $where) {
             $wheres[] = sprintf("%s %s %s", $where['field'], $where['operator'], $where['value']);
         }
         unset($where);
-
         foreach ($this->_orders as $order) {
             $orders[] = sprintf("%s %s", $order['field'], $order['sort']);
         }
         unset($order);
-
         foreach ($this->_options as $option) {
             $options[] = sprintf("%s=%s", $option['name'], $option['value']);
         }
         unset($option);
-
         $query .= sprintf('SELECT %s ', count($fields) ? implode(', ', $fields) : '*' );
         $query .= sprintf('FROM %s ', implode(',', $this->_indexes));
         if (count($wheres) > 0) {
@@ -155,7 +149,6 @@ class ESphinxQL {
         while (substr($query, -1, 1) == ' ') {
             $query = substr($query, 0, -1);
         }
-
         return $query;
     }
 
@@ -167,11 +160,9 @@ class ESphinxQL {
      * @return SphinxQL_Query $this
      */
     public function addIndex($index) {
-
         if (is_string($index)) {
             array_push($this->_indexes, $index);
         }
-
         return $this;
     }
 
@@ -183,13 +174,11 @@ class ESphinxQL {
      * @return SphinxQL_Query $this
      */
     public function removeIndex($index) {
-
         if (is_string($index)) {
             while ($pos = array_search($index, $this->_indexes)) {
                 unset($this->_indexes[$pos]);
             }
         }
-
         return $this;
     }
 
@@ -202,15 +191,12 @@ class ESphinxQL {
      * @return SphinxQL_Query $this
      */
     public function addField($field, $alias = null) {
-
         if (!is_string($alias)) {
             $alias = null;
         }
-
         if (is_string($field)) {
             $this->_fields[] = array('field' => $field, 'alias' => $alias);
         }
-
         return $this;
     }
 
@@ -225,7 +211,6 @@ class ESphinxQL {
      * @return SphinxQL_Query $this
      */
     public function addFields($array) {
-
         if (is_array($array)) {
             foreach ($array as $entry) {
                 if (is_array($entry) && isset($entry['field'])) {
@@ -236,7 +221,6 @@ class ESphinxQL {
                 }
             }
         }
-
         return $this;
     }
 
@@ -248,11 +232,9 @@ class ESphinxQL {
      * @return SphinxQL_Query $this
      */
     public function removeField($alias) {
-
         if (is_string($alias) && array_key_exists($this->_fields, $alias)) {
             unset($this->_fields[$alias]);
         }
-
         return $this;
     }
 
@@ -269,18 +251,15 @@ class ESphinxQL {
                 $this->removeField($alias);
             }
         }
-
         return $this;
     }
 
-    public function setCountFieldOnly()
-    {
+    public function setCountFieldOnly() {
         $this->_fields = array();
         $this->addField('count(*)');
     }
 
-    public function hasGroupBy()
-    {
+    public function hasGroupBy() {
         return !($this->_group === null && $this->_group_order === null);
     }
 
@@ -292,15 +271,13 @@ class ESphinxQL {
      * @return SphinxQL_Query $this
      */
     public function search($search) {
-
         if (is_string($search)) {
             $this->_search = Yii::app()->sphinx->quoteValue($search);
         }
-
         return $this;
     }
 
-	/**
+    /**
      * Escapes the query for the MATCH() function
      *
      * @param string $string The string to escape for the MATCH
@@ -310,11 +287,10 @@ class ESphinxQL {
     public function escapeMatch($string) {
         $from = array('\\', '(', ')', '|', '-', '!', '@', '~', '"', '&', '/', '^', '$', '=');
         $to = array('\\\\', '\(', '\)', '\|', '\-', '\!', '\@', '\~', '\"', '\&', '\/', '\^', '\$', '\=');
-
         return str_replace($from, $to, $string);
     }
 
-	/**
+    /**
      * Escapes the query for the MATCH() function
      * Allows some of the control characters to pass through for use with a search field: -, |, "
      * It also does some tricks to wrap/unwrap within " the string and prevents errors
@@ -333,25 +309,20 @@ class ESphinxQL {
             '~' => '\~',
             '&' => '\&',
             '/' => '\/',
-            //'^' => '\^',
-            //'$' => '\$',
-            //'=' => '\=',
+                //'^' => '\^',
+                //'$' => '\$',
+                //'=' => '\=',
         );
-
         $string = str_replace(array_keys($from_to), array_values($from_to), $string);
-
         // this manages to lower the error rate by a lot
         if (substr_count($string, '"') % 2 !== 0) {
             $string .= '"';
         }
-
         $from_to_preg = array(
             "'\"([^\s]+)-([^\s]*)\"'" => "\\1\-\\2",
             "'([^\s]+)-([^\s]*)'" => "\"\\1\-\\2\""
         );
-
         $string = preg_replace(array_keys($from_to_preg), array_values($from_to_preg), $string);
-
         return $string;
     }
 
@@ -361,9 +332,7 @@ class ESphinxQL {
      * @return SphinxQL_Query $this
      */
     public function removeSearch() {
-
         $this->_search = null;
-
         return $this;
     }
 
@@ -375,11 +344,9 @@ class ESphinxQL {
      * @return SphinxQL_Query $this
      */
     public function offset($offset) {
-
         if (is_integer($offset)) {
             $this->_offset = $offset;
         }
-
         return $this;
     }
 
@@ -391,11 +358,9 @@ class ESphinxQL {
      * @return SphinxQL_Query $this
      */
     public function limit($limit) {
-
         if (is_integer($limit)) {
             $this->_limit = $limit;
         }
-
         return $this;
     }
 
@@ -410,7 +375,6 @@ class ESphinxQL {
      * @return SphinxQL_Query $this
      */
     public function where($field, $value, $operator = null, $quote = false) {
-
         if (!in_array($operator, array('=', '!=', '>', '<', '>=', '<=', 'AND', 'NOT IN', 'IN', 'BETWEEN'))) {
             $operator = '=';
         }
@@ -420,13 +384,10 @@ class ESphinxQL {
         if (!is_scalar($value)) {
             return false;
         }
-
         if ($quote) {
             $value = Yii::app()->sphinx->quoteValue($value);
         }
-
         $this->_wheres[] = array('field' => $field, 'operator' => $operator, 'value' => $value);
-
         return $this;
     }
 
@@ -440,11 +401,9 @@ class ESphinxQL {
      * @return SphinxQL_Query $this
      */
     public function whereIn($field, $values, $how = 'any') {
-
         if (!is_array($values)) {
             $values = array($values);
         }
-
         if ($how == 'all') {
             foreach ($values as $value) {
                 $this->where($field, $value, '=');
@@ -456,7 +415,6 @@ class ESphinxQL {
         } else {
             $this->where($field, '(' . implode(', ', $values) . ')', 'IN', false);
         }
-
         return $this;
     }
 
@@ -468,11 +426,9 @@ class ESphinxQL {
      * @return SphinxQL_Query $this
      */
     public function groupBy($field) {
-
         if (is_string($field)) {
             $this->_group = $field;
         }
-
         return $this;
     }
 
@@ -485,9 +441,7 @@ class ESphinxQL {
      * @return SphinxQL_Query $this
      */
     public function removeGroupBy($field) {
-
         $this->_group = null;
-
         return $this;
     }
 
@@ -509,11 +463,9 @@ class ESphinxQL {
      * @return SphinxQL_Query $this
      */
     public function order($field, $sort) {
-
         if (is_string($field) && is_string($sort)) {
             $this->_orders[] = array('field' => $field, 'sort' => $sort);
         }
-
         return $this;
     }
 
@@ -527,11 +479,9 @@ class ESphinxQL {
      * @return SphinxQL_Query $this
      */
     public function groupOrder($field, $sort) {
-
         if (is_string($field) && is_string($sort)) {
             $this->_group_order = array('field' => $field, 'sort' => $sort);
         }
-
         return $this;
     }
 
@@ -542,9 +492,7 @@ class ESphinxQL {
      * @return SphinxQL_Query $this
      */
     public function removeGroupOrder() {
-
         $this->_group_order = null;
-
         return $this;
     }
 
@@ -557,11 +505,9 @@ class ESphinxQL {
      * @return SphinxQL_Query $this
      */
     public function option($name, $value) {
-
         if (is_string($name) && is_string($value)) {
             $this->_options[] = array('name' => $name, 'value' => $value);
         }
-
         return $this;
     }
 
@@ -574,9 +520,7 @@ class ESphinxQL {
      * @return SphinxQL_Query $this
      */
     public function removeOption($name, $value = null) {
-
         $changed = false;
-
         if (is_string($name) && ( ( $value == null ) || is_string($value) )) {
             foreach ($this->_options as $key => $option) {
                 if (( $option['name'] == $name ) && ( ( $value == null ) || ( $value == $option['value'] ) )) {
@@ -584,12 +528,10 @@ class ESphinxQL {
                     $changed = true;
                 }
             }
-
             if ($changed) {
                 array_keys($this->_options);
             }
         }
-
         return $this;
     }
 

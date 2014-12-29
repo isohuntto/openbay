@@ -2,14 +2,15 @@
 
 $directories = array(__DIR__ . '/assets', __DIR__ . '/../protected/runtime');
 
-foreach($directories as $directory) {
-    if (!is_dir($directory)) mkdir($directory);
+foreach ($directories as $directory) {
+    if (!is_dir($directory))
+        mkdir($directory);
 }
 
 $config = array(
     'basePath' => __DIR__ . '/../protected',
     'modules' => array(
-        'installer'=>array(
+        'installer' => array(
             'class' => 'application.installer.InstallerModule',
         ),
     ),
@@ -20,7 +21,7 @@ $config = array(
             'caseSensitive' => false,
             'rules' => array(
                 '/' => 'installer',
-                'installer/<controller:\w+>'=>'installer/<controller>',
+                'installer/<controller:\w+>' => 'installer/<controller>',
                 'installer/<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 'installer/<controller:\w+>/<action:\w+>' => 'installer/<controller>/<action>',
             )

@@ -1,6 +1,6 @@
-$(document).ready(function() {
+$(document).ready(function () {
     $(".db-settings-switcher").bootstrapSwitch();
-    $(".db-settings-switcher").on('switchChange.bootstrapSwitch', function(event, state) {
+    $(".db-settings-switcher").on('switchChange.bootstrapSwitch', function (event, state) {
         console.log(event, state);
 
         if (!state) {
@@ -11,7 +11,7 @@ $(document).ready(function() {
     });
 
     $(".sphinx-settings-switcher").bootstrapSwitch();
-    $(".sphinx-settings-switcher").on('switchChange.bootstrapSwitch', function(event, state) {
+    $(".sphinx-settings-switcher").on('switchChange.bootstrapSwitch', function (event, state) {
         console.log(event, state);
 
         if (!state) {

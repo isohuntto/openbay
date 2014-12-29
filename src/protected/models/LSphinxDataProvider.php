@@ -1,7 +1,6 @@
 <?php
 
-class LSphinxDataProvider extends CDataProvider
-{
+class LSphinxDataProvider extends CDataProvider {
 
     /**
      *
@@ -23,13 +22,11 @@ class LSphinxDataProvider extends CDataProvider
      * @var ESphinxQL query
      */
     public $query = null;
-
     public $defaultSortAttributes = array(
         'weight()' => CSort::SORT_DESC,
         'torrent_status' => CSort::SORT_DESC,
         'seeders' => CSort::SORT_DESC
     );
-
     public $queryOptions = array(
         'max_matches' => '10000'
     );
@@ -46,15 +43,12 @@ class LSphinxDataProvider extends CDataProvider
      * @var array
      */
     public $with = array();
-
     public $cacheTime = 600;
 
-    public function __construct($modelClass, $query, $config = array())
-    {
+    public function __construct($modelClass, $query, $config = array()) {
         if (($query instanceof ESphinxQL) === false) {
             throw new CException("Query param must be instance of EsphinxQL");
         }
-
         if (is_string($modelClass)) {
             $this->modelClass = $modelClass;
             $this->model = CActiveRecord::model($this->modelClass);
@@ -62,11 +56,8 @@ class LSphinxDataProvider extends CDataProvider
             $this->modelClass = get_class($modelClass);
             $this->model = $modelClass;
         }
-
         $this->setId(CHtml::modelName($this->model));
-
         $this->query = $query;
-
         foreach ($config as $key => $value) {
             $this->$key = $value;
         }
@@ -79,30 +70,25 @@ class LSphinxDataProvider extends CDataProvider
      *            the sorting object class name. Parameter is available since version 1.1.13.
      * @return CSort the sorting object. If this is false, it means the sorting is disabled.
      */
-    public function getSort($className = 'CSort')
-    {
+    public function getSort($className = 'CSort') {
         if (($sort = parent::getSort($className)) !== false)
             $sort->modelClass = $this->modelClass;
         return $sort;
     }
 
-    protected function fetchData()
-    {
+    protected function fetchData() {
         foreach ($this->queryOptions as $name => $value) {
             $this->query->option($name, $value);
         }
-
         if (($pagination = $this->getPagination('Pagination')) !== false) {
             $pagination->setItemCount($this->getTotalItemCount());
             $this->query->limit($pagination->getLimit())->offset($pagination->getOffset());
         }
-
         $directions = null;
         if (($sort = $this->getSort()) !== false && $sort->getDirections()) {
             $directions = $sort->getDirections();
         }
-
-        if (! empty($directions)) {
+        if (!empty($directions)) {
             $this->query->setOrders(array());
             foreach ($directions as $field => $sort) {
                 $params = $this->getSort()->resolveAttribute($field);
@@ -127,9 +113,7 @@ class LSphinxDataProvider extends CDataProvider
                 }
             }
         }
-
         $sql = $this->query->build();
-
         try {
             $ids = Yii::app()->sphinx->cache($this->cacheTime)->createCommand($sql)->queryColumn();
             if ($ids) {
@@ -143,18 +127,15 @@ class LSphinxDataProvider extends CDataProvider
             }
         } catch (Exception $e) {
             Yii::log('LSphinxDataProvider exception' . PHP_EOL . 'Message: ' . $e->getMessage() . 'Trace: ' . $e->getTraceAsString(), CLogger::LEVEL_ERROR);
-
             if (YII_DEBUG) {
                 throw $e;
             }
         }
-
         return array();
     }
 
     // @TODO Refactor in future.
-    protected function fetchKeys()
-    {
+    protected function fetchKeys() {
         $keys = array();
         foreach ($this->getData() as $i => $data) {
             $key = $this->keyAttribute === null ? $data->getPrimaryKey() : $data->{$this->keyAttribute};
@@ -163,10 +144,8 @@ class LSphinxDataProvider extends CDataProvider
         return $keys;
     }
 
-    protected function calculateTotalItemCount()
-    {
+    protected function calculateTotalItemCount() {
         $q = clone $this->query;
-
         $q->setCountFieldOnly();
         $sql = $q->build();
         $total = 0;
@@ -182,7 +161,6 @@ class LSphinxDataProvider extends CDataProvider
                 throw $e;
             }
         }
-
         return $total > 9975 ? 9975 : $total;
     }
 }

@@ -14,7 +14,7 @@ class ESphinxDataProvider extends CActiveDataProvider {
      * Calculates the total number of data items.
      * @return integer the total number of data items.
      */
-    protected function calculateTotalItemCount() {        
+    protected function calculateTotalItemCount() {
         return $this->getPagination()->getItemCount();
     }
 

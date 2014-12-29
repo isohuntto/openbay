@@ -1,4 +1,5 @@
 <?php
+
 mb_internal_encoding('UTF-8');
 error_reporting(E_ALL);
 
@@ -9,5 +10,5 @@ $yii = __DIR__ . '/../protected/vendor/yiisoft/yii/framework/' . (YII_DEBUG ? 'y
 require_once (__DIR__ . '/../protected/vendor/autoload.php');
 require_once ($yii);
 
-$config =(is_file('installer.php')) ? 'installer.php' : __DIR__ . '/../protected/config/config.php';
+$config = (is_file('installer.php')) ? 'installer.php' : __DIR__ . '/../protected/config/config.php';
 Yii::createWebApplication($config)->run();

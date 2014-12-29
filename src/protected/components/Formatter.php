@@ -1,12 +1,10 @@
 <?php
 
-class Formatter extends CFormatter
-{
-    public function formatReverseSize($size = 0, $type = 'b')
-    {
-        $type = mb_strtolower($type);
+class Formatter extends CFormatter {
 
-        switch($type) {
+    public function formatReverseSize($size = 0, $type = 'b') {
+        $type = mb_strtolower($type);
+        switch ($type) {
             case 'kb':
                 return size * 1024;
             case 'mb':
@@ -18,13 +16,10 @@ class Formatter extends CFormatter
         }
     }
 
-    public function formatAge($value)
-    {
+    public function formatAge($value) {
         $now = new DateTime();
         $created = new DateTime($value);
-
         $interval = $now->diff($created);
-
         if ($interval->y) {
             $format = '%y ' . Yii::t('site', 'year|years', $interval->y);
         } else if ($interval->m) {
@@ -36,7 +31,7 @@ class Formatter extends CFormatter
         } else {
             $format = '%i ' . Yii::t('site', 'min', $interval->i);
         }
-
         return $interval->format($format);
     }
+
 }

@@ -1,34 +1,34 @@
 <?php
-class InstallerModule  extends CWebModule
-{
+
+class InstallerModule extends CWebModule {
+
     private $_assetsUrl;
 
-    public function init()
-    {
+    public function init() {
         parent::init();
         Yii::setPathOfAlias('installer', dirname(__FILE__));
 
         Yii::app()->setComponents(array(
-            'errorHandler'=>array(
-                'class'=>'CErrorHandler',
-                'errorAction'=>parent::getId().'/default/error',
+            'errorHandler' => array(
+                'class' => 'CErrorHandler',
+                'errorAction' => parent::getId() . '/default/error',
             ),
             'widgetFactory' => array(
-                'class'=>'CWidgetFactory',
+                'class' => 'CWidgetFactory',
                 'widgets' => array()
             )
-        ), false);
+                ), false);
     }
 
-    public function getAssetsUrl()
-    {
-        if($this->_assetsUrl===null)
-            $this->_assetsUrl=Yii::app()->getAssetManager()->publish(Yii::getPathOfAlias('installer.assets'));
+    public function getAssetsUrl() {
+        if ($this->_assetsUrl === null) {
+            $this->_assetsUrl = Yii::app()->getAssetManager()->publish(Yii::getPathOfAlias('installer.assets'));
+        }
         return $this->_assetsUrl;
     }
 
-    public function setAssetsUrl($value)
-    {
-        $this->_assetsUrl=$value;
+    public function setAssetsUrl($value) {
+        $this->_assetsUrl = $value;
     }
+
 }

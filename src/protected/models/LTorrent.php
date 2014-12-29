@@ -1,7 +1,7 @@
 <?php
 
-class LTorrent extends CActiveRecord
-{
+class LTorrent extends CActiveRecord {
+
     public static $defaultSortAttributes = array(
         'id' => array(
             'default' => 'desc',
@@ -31,25 +31,15 @@ class LTorrent extends CActiveRecord
     );
 
     const SYNC_STATUS_UPLOADED = 0;
-
     const SYNC_STATUS_SYNCHRONIZED = 1;
-
     const TORRENT_STATUS_UNCHECKED = 0;
-
     const TORRENT_STATUS_GOOD = 1;
-
     const TORRENT_STATUS_SUSPECTED = 2;
-
     const TORRENT_STATUS_FAKE = 3;
-
     const TORRENT_STATUS_REMOVED = 4;
-
     const VISIBLE_STATUS_VISIBLE = 0;
-
     const VISIBLE_STATUS_DIRECT = 1;
-
     const VISIBLE_STATUS_INVISIBLE = 2;
-
     const VISIBLE_STATUS_REGISTERED_ONLY = 3;
 
     protected static $torrentVisibleStatusRelations = array(
@@ -63,8 +53,7 @@ class LTorrent extends CActiveRecord
         self::TORRENT_STATUS_REMOVED => self::VISIBLE_STATUS_INVISIBLE
     );
 
-    public static function model($className = __CLASS__)
-    {
+    public static function model($className = __CLASS__) {
         return parent::model($className);
     }
 
@@ -72,13 +61,11 @@ class LTorrent extends CActiveRecord
      *
      * @return string the associated database table name
      */
-    public function tableName()
-    {
+    public function tableName() {
         return 'torrents';
     }
 
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return array(
             'category_id' => Yii::t('model_titles', 'Category'),
             'file' => Yii::t('model_titles', 'Torrent file'),
@@ -86,8 +73,7 @@ class LTorrent extends CActiveRecord
         );
     }
 
-    public function scopes()
-    {
+    public function scopes() {
         return array(
             'allowed' => array(
                 'condition' => 'torrent_status IN(:unchecked, :good) AND visible_status = :visible',
@@ -100,8 +86,7 @@ class LTorrent extends CActiveRecord
         );
     }
 
-    public function getPreparedName($name = '')
-    {
+    public function getPreparedName($name = '') {
         if (empty($name)) {
             $name = $this->name;
         }
@@ -110,7 +95,7 @@ class LTorrent extends CActiveRecord
             '#\[[^\]]+\]#sui',
             '#{[^}]+}#sui',
             '#\W+#sui'
-        ), ' ', $name);
+                ), ' ', $name);
 
         $breakWords = array(
             '\([^\)]+\)',
@@ -192,23 +177,19 @@ class LTorrent extends CActiveRecord
         return trim(preg_replace('#\s+#sui', ' ', $name));
     }
 
-    public function getUrl()
-    {
+    public function getUrl() {
         return Yii::app()->createUrl('main/torrent', array(
-            'id' => $this->id,
-            'name' => self::getUrlName($this->name)
+                    'id' => $this->id,
+                    'name' => self::getUrlName($this->name)
         ));
     }
 
-    public static function getUrlName($name)
-    {
+    public static function getUrlName($name) {
         // replace non letter or digits by -
         $name = preg_replace('#[^\\pL\d]+#u', '-', $name);
         $name = trim($name, '-');
-
         // remove unwanted characters
         $name = preg_replace('#[^-\w]+#u', '', $name);
-
         if (empty($name)) {
             return 'n-a';
         }
@@ -218,8 +199,7 @@ class LTorrent extends CActiveRecord
     /**
      * Internal site url
      */
-    public function getDownloadUrl()
-    {
+    public function getDownloadUrl() {
         static $url = null;
         if (is_null($url)) {
             $url = 'http://torcache.net/torrent/' . strtoupper($this->hash) . '.torrent';
@@ -231,31 +211,26 @@ class LTorrent extends CActiveRecord
         return $url;
     }
 
-    public function getMagnetLink()
-    {
+    public function getMagnetLink() {
         $params = array(
             'dn' => $this->name,
             'xl' => $this->size,
             'dl' => $this->size
         );
-
         $magnetLink = 'magnet:?xt=urn:btih:' . $this->hash . '&amp;' . http_build_query($params, '', '&amp;');
-
         return $magnetLink;
     }
 
-    public function findByHash($hash)
-    {
+    public function findByHash($hash) {
         if (empty($hash)) {
             return null;
         }
         return self::model()->findByAttributes(array(
-            'hash' => $hash
+                    'hash' => $hash
         ));
     }
 
-    public function getFormatedSize($size = null, $precision = 2)
-    {
+    public function getFormatedSize($size = null, $precision = 2) {
         $units = array(
             'B',
             'KB',
@@ -263,33 +238,25 @@ class LTorrent extends CActiveRecord
             'GB',
             'TB'
         );
-
         if (null === $size) {
             $size = $this->size;
         }
-
         $bytes = max($size, 0);
         $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
         $pow = min($pow, count($units) - 1);
-
         $bytes /= pow(1024, $pow);
-
         return round($bytes, $precision) . '&nbsp;' . $units[$pow];
     }
 
-    public function getTags()
-    {
+    public function getTags() {
         if (empty($this->tags)) {
             return array();
         }
-
         $tags = explode(',', $this->tags);
         return $tags;
     }
 
-
-    public function getCategoryTag()
-    {
+    public function getCategoryTag() {
         $tags = $this->getTags();
         if (empty($tags)) {
             return strtolower(LCategory::getCategoryTag(LCategory::OTHER));
@@ -297,28 +264,27 @@ class LTorrent extends CActiveRecord
         return $tags[0];
     }
 
-    public function getCategoryTagId()
-    {
+    public function getCategoryTagId() {
         $tags = $this->getTags();
         if (empty($tags)) {
             return LCategory::OTHER;
         }
-        $lowedCategories = array_map(function ($val) {return strtolower($val);}, LCategory::$categoriesTags);
-        if ($id = array_search($tags[0], $lowedCategories)) {
+        $lowedCategories = array_map(function ($val) {
+            return strtolower($val);
+        }, LCategory::$categoriesTags);
+        $id = array_search($tags[0], $lowedCategories);
+        if ($id) {
             return $id;
         }
         return LCategory::OTHER;
     }
 
-
-    public function getSphinxDataProvider(SearchForm $model)
-    {
+    public function getSphinxDataProvider(SearchForm $model) {
         $objCommon = $this->getSphinxSearchObject($model);
         $defaultSortOrder = $objCommon->getOrders() ? array() : array('id' => CSort::SORT_DESC);
         if (!empty($model->words)) {
             $defaultSortOrder = array_merge(array('weight()' => CSort::SORT_DESC), $defaultSortOrder);
         }
-
         return new LSphinxDataProvider("LTorrent", $objCommon, array(
             'pagination' => array(
                 'class' => 'Pagination',
@@ -332,14 +298,12 @@ class LTorrent extends CActiveRecord
         ));
     }
 
-    protected function getSphinxSearchObject(SearchForm $model)
-    {
+    protected function getSphinxSearchObject(SearchForm $model) {
         $objCommon = new ESphinxQL();
         $objCommon->addField('id')->addIndex(Yii::app()->params['sphinx']['indexes']['torrents']);
-
         // Keywords
         $searchPattern = '';
-        if (! empty($model->words)) {
+        if (!empty($model->words)) {
             if (is_array($model->words)) {
                 $wordQuery = $model->words;
                 foreach ($wordQuery as $key => $word) {
@@ -347,8 +311,7 @@ class LTorrent extends CActiveRecord
                 }
                 $exact = '"' . implode(' ', $wordQuery) . '"';
                 $approximite = $exact . '/5';
-                usort($wordQuery, function ($a, $b)
-                {
+                usort($wordQuery, function ($a, $b) {
                     $a = mb_strlen($a, 'utf-8');
                     $b = mb_strlen($b, 'utf-8');
                     if ($a === $b) {
@@ -356,7 +319,6 @@ class LTorrent extends CActiveRecord
                     }
                     return $a > $b ? - 1 : 1;
                 });
-
                 $tmp = array();
                 $tmp[] = $exact;
                 foreach ($wordQuery as $word) {
@@ -372,34 +334,28 @@ class LTorrent extends CActiveRecord
 
             $searchPattern .= '@name ' . $search;
             $objCommon->option('ranker', 'expr(\'' . 'sum((4*lcs+2*(min_hit_pos==1)+exact_hit)*user_weight)*1000+bm25 + '
-                . '(created_at - 1000000000) / (NOW() - 1000000000) * 100 + if(torrent_status=1,100,0)\')');
+                    . '(created_at - 1000000000) / (NOW() - 1000000000) * 100 + if(torrent_status=1,100,0)\')');
         }
-
         // Tag
-        if (! empty($model->tags)) {
+        if (!empty($model->tags)) {
             $searchPattern .= ' @tags "=' . $model->tags . '"';
         }
-
         $objCommon->order('weight()', 'DESC');
         $objCommon->order('id', 'DESC');
 
-        if (! empty($searchPattern)) {
+        if (!empty($searchPattern)) {
             $objCommon->search($searchPattern);
         }
-
         // Filter torrents by age
-        if (! empty($model->age)) {
+        if (!empty($model->age)) {
             $objCommon->where('created_at', time() - $model->age * 86400, '>=', true);
         }
-
         return $objCommon;
     }
 
-    public static function getLastTorrentIdsByCategories($count = 5, $forceRefresh = false)
-    {
+    public static function getLastTorrentIdsByCategories($count = 5, $forceRefresh = false) {
         $key = 'tags_last_torrents_ids';
         $torrentsIds = Yii::app()->cache->get($key);
-
         try {
             if (empty($torrentsIds) || $forceRefresh) {
                 $torrentsIds = array();
@@ -407,35 +363,31 @@ class LTorrent extends CActiveRecord
                 foreach ($tags as $tag) {
                     $obj = new ESphinxQL();
                     $obj->addField('id')
-                        ->addIndex(Yii::app()->params['sphinx']['indexes']['torrents'])
-                        ->option('ranker', 'SPH04')
-                        ->search('@tags "' . $obj->halfEscapeMatch($tag) . '"')
-                        ->where('torrent_status', LTorrent::TORRENT_STATUS_GOOD)
-                        ->order('weight()', 'DESC')
-                        ->order('id', 'DESC')
-                        ->limit($count);
-
+                            ->addIndex(Yii::app()->params['sphinx']['indexes']['torrents'])
+                            ->option('ranker', 'SPH04')
+                            ->search('@tags "' . $obj->halfEscapeMatch($tag) . '"')
+                            ->where('torrent_status', LTorrent::TORRENT_STATUS_GOOD)
+                            ->order('weight()', 'DESC')
+                            ->order('id', 'DESC')
+                            ->limit($count);
                     $torrentsIds = array_merge($torrentsIds, Yii::app()->sphinx->cache(600)->createCommand($obj->build())->queryColumn());
                 }
                 Yii::app()->cache->set($key, $torrentsIds);
             }
         } catch (Exception $e) {
             Yii::log('getLastTorrentIdsByCategories failed. Exception: ' . $e->getMessage() . PHP_EOL . 'Trace: ' . $e->getTraceAsString(), CLogger::LEVEL_ERROR);
-
             if (YII_DEBUG) {
                 throw $e;
             }
         }
-
         return $torrentsIds;
     }
 
-    public function getBBParsed($str = null)
-    {
+    public function getBBParsed($str = null) {
         if ($str === null) {
             $str = $this->description;
         }
-        if (! extension_loaded('bbcode')) {
+        if (!extension_loaded('bbcode')) {
             return $str;
         }
         $arrayBBCode = array(
@@ -506,8 +458,7 @@ class LTorrent extends CActiveRecord
         return bbcode_parse($BBHandler, $str);
     }
 
-    public function getPureDescription($str = null)
-    {
+    public function getPureDescription($str = null) {
         if ($str === null) {
             $str = $this->description;
         }
@@ -520,27 +471,25 @@ class LTorrent extends CActiveRecord
         return $p->purify($str);
     }
 
-    public function getDescriptionWithLazyImage($str = null)
-    {
+    public function getDescriptionWithLazyImage($str = null) {
         if ($str === null) {
             $str = $this->description;
         }
         return preg_replace('#(<img[^>]+?)(src=("[^"]"|[^\s>]+))([^>]*>)#sui', '\1 data-url=\3 src="" \4', $str);
     }
 
-    protected function replaceImageLinksWithTag($str)
-    {
+    protected function replaceImageLinksWithTag($str) {
         $str = preg_replace('#\[img\]\s*(http://[^\[\ ]+)\s*\[/img\]#sui', '<img src="\\1" />', $str);
         $str = preg_replace('#(?<!["=])http://[^\[\ ]+\.(jpeg|jpg|png|gif)#sui', '<img src="\\0" />', $str);
         return $str;
     }
 
-    public function getFullyPreparedDescription()
-    {
+    public function getFullyPreparedDescription() {
         $str = $this->getBBParsed();
         $str = $this->getPureDescription($str);
         $str = $this->replaceImageLinksWithTag($str);
         $str = $this->getDescriptionWithLazyImage($str);
         return $str;
     }
+
 }

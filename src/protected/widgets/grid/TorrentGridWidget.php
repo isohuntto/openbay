@@ -1,27 +1,19 @@
 <?php
+
 Yii::import('zii.widgets.grid.CGridView');
 
-class TorrentGridWidget extends CGridView
-{
+class TorrentGridWidget extends CGridView {
 
     public $cssFile = false;
-
     public $loadingCssClass = false;
-
     public $baseScriptUrl = '/widgets/gridview/';
-
     public $itemsCssClass = 'table table-striped table-hover';
-
     public $initScripts = true;
-
     public $tag = '';
-
     public $renderKeys = true;
 
-    function init()
-    {
+    function init() {
         $this->columns = array_merge(array(
-
             'title' => array(
                 'class' => 'application.widgets.grid.TorrentDescriptionColumn',
                 'header' => Yii::t('site_texts', 'Torrents'),
@@ -32,7 +24,7 @@ class TorrentGridWidget extends CGridView
                     'class' => 'title-row'
                 )
             ),
-        ), $this->columns);
+                ), $this->columns);
 
         $this->columns = array_merge($this->columns, array(
             'created_at' => array(
@@ -85,20 +77,17 @@ class TorrentGridWidget extends CGridView
         parent::init();
     }
 
-    public function registerClientScript()
-    {
+    public function registerClientScript() {
         if ($this->initScripts) {
             return parent::registerClientScript();
         }
-
         return;
     }
 
     /**
      * Renders the data items for the grid view.
      */
-    public function renderItems()
-    {
+    public function renderItems() {
         if ($this->dataProvider->getItemCount() > 0 || $this->showTableOnEmpty) {
             echo "<table class=\"table-torrents {$this->itemsCssClass}\">\n";
             $this->renderTableHeader();
@@ -113,8 +102,7 @@ class TorrentGridWidget extends CGridView
         }
     }
 
-    public function renderKeys()
-    {
+    public function renderKeys() {
         if ($this->renderKeys) {
             parent::renderKeys();
         }
@@ -123,8 +111,7 @@ class TorrentGridWidget extends CGridView
     /**
      * Renders the table body.
      */
-    public function renderTableBody()
-    {
+    public function renderTableBody() {
         $data = $this->dataProvider->getData();
 
         $n = count($data);
@@ -132,7 +119,7 @@ class TorrentGridWidget extends CGridView
 
         if ($n > 0) {
             // Render correct data
-            for ($row = 0; $row < $n; ++ $row) {
+            for ($row = 0; $row < $n; ++$row) {
                 $this->renderTableRow($row);
             }
         } else {

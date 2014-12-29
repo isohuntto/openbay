@@ -1,22 +1,17 @@
 <?php
 
-class AHttpRequest extends CHttpRequest
-{
+class AHttpRequest extends CHttpRequest {
 
     /**
      * IP address of the current user
      *
      * @var boolean
      */
-
     private $ipAddress = null;
-
     public $countryCode = '';
-
     public $isMac = false;
 
-    public function init()
-    {
+    public function init() {
         parent::init();
     }
 
@@ -26,20 +21,19 @@ class AHttpRequest extends CHttpRequest
      * @see http://stackoverflow.com/a/916157
      * @return string user IP address
      */
-    public function getUserHostAddress()
-    {
-        if (! is_null($this->$ipAddress)) {
+    public function getUserHostAddress() {
+        if (!is_null($this->$ipAddress)) {
             return $this->$ipAddress;
         }
         foreach (array(
-            'HTTP_X_REAL_IP',
-            'HTTP_CLIENT_IP',
-            'HTTP_X_FORWARDED_FOR',
-            'HTTP_X_FORWARDED',
-            'HTTP_X_CLUSTER_CLIENT_IP',
-            'HTTP_FORWARDED_FOR',
-            'HTTP_FORWARDED',
-            'REMOTE_ADDR'
+    'HTTP_X_REAL_IP',
+    'HTTP_CLIENT_IP',
+    'HTTP_X_FORWARDED_FOR',
+    'HTTP_X_FORWARDED',
+    'HTTP_X_CLUSTER_CLIENT_IP',
+    'HTTP_FORWARDED_FOR',
+    'HTTP_FORWARDED',
+    'REMOTE_ADDR'
         ) as $key) {
             if (array_key_exists($key, $_SERVER) === true) {
                 foreach (explode(',', $_SERVER[$key]) as $ip) {
@@ -55,9 +49,8 @@ class AHttpRequest extends CHttpRequest
         return ($this->$ipAddress = '0.0.0.0');
     }
 
-    public function getCountryCode()
-    {
-        if (empty($this->countryCode) && ! YII_DEBUG) {
+    public function getCountryCode() {
+        if (empty($this->countryCode) && !YII_DEBUG) {
             if (empty(Yii::app()->request->cookies['country_code'])) {
                 $this->countryCode = geoip_country_code_by_name($this->getUserHostAddress());
                 Yii::app()->request->cookies['country_code'] = new CHttpCookie('country_code', $this->countryCode, array(
@@ -74,12 +67,11 @@ class AHttpRequest extends CHttpRequest
     /**
      * OS detection needs for Bitlord download links
      */
-    public function isMac()
-    {
+    public function isMac() {
         if (stripos($this->getUserAgent(), 'mac')) {
             $this->isMac = true;
         }
-
         return $this->isMac;
     }
+
 }

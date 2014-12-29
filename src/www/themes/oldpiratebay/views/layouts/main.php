@@ -1,5 +1,6 @@
-<?= $this->renderPartial('/layouts/head'); ?>
+<?=
 
-<?= $content; ?>
-
-<?= $this->renderPartial('/layouts/footer'); ?>
+$this->renderPartial('/layouts/head');
+$content;
+$this->renderPartial('/layouts/footer');
+?>

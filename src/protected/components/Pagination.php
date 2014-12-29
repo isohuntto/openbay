@@ -1,7 +1,6 @@
 <?php
 
-class Pagination extends CPagination
-{
+class Pagination extends CPagination {
 
     const DEFAULT_PAGE_SIZE = 35;
 

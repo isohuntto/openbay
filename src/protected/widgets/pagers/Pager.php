@@ -1,26 +1,17 @@
 <?php
 
-class Pager extends CLinkPager
-{
+class Pager extends CLinkPager {
 
     public $cssFile = false;
-
     public $header = '<nav>';
-    
     public $footer = '</nav>';
-    
     public $firstPageLabel = false;
-
     public $lastPageLabel = false;
-
     public $selectedPageCssClass = 'active';
-
     public $hiddenPageCssClass = 'disabled';
-    
     public $htmlOptions = array('class' => 'pagination');
 
-    public function init()
-    {
+    public function init() {
         if ($this->prevPageLabel === null) {
             $this->prevPageLabel = Yii::t('site_texts', 'Prev');
         }
@@ -31,17 +22,15 @@ class Pager extends CLinkPager
         parent::init();
     }
 
-    public function run()
-    {
+    public function run() {
         parent::run();
         $this->setPrevNextMetaTags();
     }
 
-
-    protected function createPageButtons()
-    {
-        if (($pageCount = $this->getPageCount()) <= 1)
+    protected function createPageButtons() {
+        if (($pageCount = $this->getPageCount()) <= 1) {
             return array();
+        }
 
         list ($beginPage, $endPage) = $this->getPageRange();
         $currentPage = $this->getCurrentPage(false); // currentPage is calculated in getPageRange()
@@ -54,19 +43,22 @@ class Pager extends CLinkPager
 
         // prev page
         if ($this->prevPageLabel) {
-            if (($page = $currentPage - 1) < 0)
+            if (($page = $currentPage - 1) < 0) {
                 $page = 0;
+            }
             $buttons[] = $this->createPageButton($this->prevPageLabel, $page, $this->previousPageCssClass, $currentPage <= 0, false);
         }
 
         // internal pages
-        for ($i = $beginPage; $i <= $endPage; ++ $i)
+        for ($i = $beginPage; $i <= $endPage; ++$i) {
             $buttons[] = $this->createPageButton($i + 1, $i, $this->internalPageCssClass, false, $i == $currentPage);
+        }
 
-            // next page
+        // next page
         if ($this->nextPageLabel) {
-            if (($page = $currentPage + 1) >= $pageCount - 1)
+            if (($page = $currentPage + 1) >= $pageCount - 1) {
                 $page = $pageCount - 1;
+            }
             $buttons[] = $this->createPageButton($this->nextPageLabel, $page, $this->nextPageCssClass, $currentPage >= $pageCount - 1, false);
         }
 
@@ -78,22 +70,19 @@ class Pager extends CLinkPager
         return $buttons;
     }
 
-    protected function createPageUrl($page)
-    {
+    protected function createPageUrl($page) {
         $page = $page * $this->getPages()->getPageSize();
         $page = ($page) ? $page - 1 : $page;
         return $this->getPages()->createPageUrl($this->getController(), $page);
     }
 
-    public function getPageCount()
-    {
+    public function getPageCount() {
         $skipCount = $this->getPages()->getPageCount();
         $pageSize = $this->getPages()->getPageSize();
         return ($skipCount) ? $skipCount / $pageSize : $skipCount;
     }
 
-    protected function setPrevNextMetaTags()
-    {
+    protected function setPrevNextMetaTags() {
         $count = $this->getPageCount();
         $current = $this->getCurrentPage(false);
 
@@ -106,4 +95,5 @@ class Pager extends CLinkPager
             }
         }
     }
+
 }
