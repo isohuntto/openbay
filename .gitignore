@@ -13,3 +13,4 @@ src/protected/runtime/
 src/www/assets/
 
 *.log *.logs log/ logs/
+*.db
