@@ -1,5 +1,5 @@
 <div class="browse-cats short-query">
-    <?php foreach ($tags as $tag) {
+    <?php foreach ($tags as $tag) :
         $tagLower = mb_strtolower($tag, Yii::app()->charset);
         $tagId = array_search($tag, LCategory::$categoriesTags);
     ?>
@@ -20,5 +20,5 @@
             ));
         } ?>
     </div>
-    <?php } ?>
+    <?php endforeach; ?>
 </div>
