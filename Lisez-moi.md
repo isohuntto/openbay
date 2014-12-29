@@ -1,9 +1,11 @@
 openbay
 =======
-Nous, l'équipe qui vous a apporté https://isohunt.to et http://oldpiratebay.org vous apportons la prochaine étape dans l'évolution du torrent. Le code source de "The Pirate Bay".
+Nous, l'équipe qui vous a apporté [isoHunt] (https://isohunt.to) et [oldpiratebay.org] (http://oldpiratebay.org) vous apportons la prochaine étape dans l'évolution du torrent. Le code source de "The Pirate Bay".
 
 Les sites de torrent tel qu'Isohunt et The Pirate Bay nous ont donné des leçons qu'il serait criminel d'ignorer. Les sites de torrent individuels sont des cibles faciles.
-Le code source libre de Pirate Bay donnera à absolument toutes les personnes avec un minimum de connaissances sur le fonctionnement d'internet et des sites web ainsi que le matériel de base d'un serveur, la possibilité de créer une copie de Pirate Bay sur son propre domaine. 
+Ce code donnera la possibilité à des personnes avec un minimum de connaissances en informatique et l'équipement de base d'un serveur, la possibilité de créer un clone de Pirate Bay sur leur propre domaine. 
+
+Nous voulons vous donner une opportunité de donner votre avis, de définir des besoins et de participer activement à l'évolution de oldpiratebay.org. De nombreuse demandes ont été reçues concernant un vaste champs de fonctionnalités mais nous voulons accentuer le processus de développement. C'est pourquoi nous faisons appel à cette énorme communauté dévouée pour créer de nouvelle demandes de fonctionnalités [features requests](https://openbay.uservoice.com/forums/279139-ideas) et pour coder ces fonctionnalités. 
 
 Installation
 =======
