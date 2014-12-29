@@ -43,7 +43,7 @@ return array(
             ),
             'packages' => array(
                 'base' => array(
-                    'baseUrl' => '/css/',
+                    'baseUrl' => '../../www/css/',
                     'css' => array(
                         'opb.css',
                     ),

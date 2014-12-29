@@ -6,7 +6,7 @@
        <nav id="navlinks">
            <strong>Search Torrents</strong> |
            <a href="<?= Yii::app()->createUrl('main/browse'); ?>" title="Browse Torrents">Browse Torrents</a> |
-           <a href="<?= Yii::app()->createUrl('main/browse'); ?>" title="Recent Torrents">Recent Torrents</a>
+           <a href="<?= Yii::app()->createUrl('main/recent'); ?>" title="Recent Torrents">Recent Torrents</a>
        </nav>
        <form name="q" method="get" action="<?= $this->createUrl('main/search'); ?>">
            <p id="inp">

@@ -19,7 +19,7 @@ class TorrentDescriptionColumn extends CDataColumn
         $html = '';
 
         $html .= "<div style='float: right; height: 16px;'>"
-                . "<a href='" . $data->getMagnetLink() . "' title='MAGNET LINK'><img src='/img/icons/magnet.png'/></a>"
+                . "<a href='" . $data->getMagnetLink() . "' title='MAGNET LINK'><img src='../../../www/img/icons/magnet.png'/></a>"
               .  "</div>";
 
         $label = CHtml::tag('span', array(), $data->name);
