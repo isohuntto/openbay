@@ -13,7 +13,6 @@
         Yii::app()->clientScript->registerPackage('base');
         Yii::app()->clientScript->registerCoreScript('jquery');
     ?>
-
 </head>
 <body>
 <script>
@@ -35,19 +34,15 @@
                             <a href="<?= Yii::app()->createUrl('main/browse'); ?>" title="Browse Torrents">Browse Torrents</a>&nbsp;&nbsp;|&nbsp;
                             <a href="<?= Yii::app()->createUrl('main/recent'); ?>" title="Recent Torrent">Recent Torrents</a>
                         </div>
-
                         <input type="search&quot;" class="inputbox topsrch" title="Piratesearch" name="q" placeholder="search here..." value="<?=  CHtml::encode(Yii::app()->request->getParam('q'));?>">
                         <input id="searchBtn" value="" type="submit" class="submitbutton"><br>
-
-
                         <label title="All"><input name="" type="checkbox" <?php if (!Yii::app()->request->getParam('iht')) : ?>checked<?php endif; ?>>All</label>
                         <?php
-
                         $tags = LCategory::$categoriesTags;
-                        foreach($tags as $tagId => $tag) { ?>
+                        foreach($tags as $tagId => $tag) : ?>
                             <label title="<?=$tag;?>"><input name="iht" type="checkbox" value="<?=$tagId;?>"<?php if (Yii::app()->request->getParam('iht') == $tagId) : ?>checked<?php endif; ?>><?= $tag; ?></label>
                         <?php
-                        }
+                        endforeach;
                         ?>
                     </div>
             </form>
