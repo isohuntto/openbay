@@ -35,11 +35,9 @@
                             <a href="<?= Yii::app()->createUrl('main/browse'); ?>" title="Browse Torrents">Browse Torrents</a>&nbsp;&nbsp;|&nbsp;
                             <a href="<?= Yii::app()->createUrl('main/recent'); ?>" title="Recent Torrent">Recent Torrents</a>
                         </div>
-
-                        <input type="search&quot;" class="inputbox topsrch" title="Piratesearch" name="q" placeholder="search here..." value="<?=  CHtml::encode(Yii::app()->request->getParam('q'));?>">
-                        <input id="searchBtn" value="" type="submit" class="submitbutton"><br>
-
-
+					
+                        <input type="text" class="inputbox topsrch" title="Piratesearch" name="q" placeholder="Search here..." value="<?= Yii::app()->request->getParam('q');?>" />
+                        <input id="searchBtn" value="" type="submit" class="submitbutton" /><br />
                         <label title="All"><input name="" type="checkbox" <?php if (!Yii::app()->request->getParam('iht')) : ?>checked<?php endif; ?>>All</label>
                         <?php
 
