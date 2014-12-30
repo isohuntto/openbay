@@ -19,15 +19,15 @@ class TorrentDescriptionColumn extends CDataColumn
         $html = '';
 
         $html .= "<div style='float: right; height: 16px;'>"
-                . "<a href='" . $data->getMagnetLink() . "' title='MAGNET LINK'><img src='/img/icons/magnet.png'/></a>"
+                . "<a href='" . $data->getMagnetLink() . "' title='MAGNET LINK'><img src='/img/icons/magnet.png' alt=\"MAGNET LINK\" /></a>"
               .  "</div>";
 
         $label = CHtml::tag('span', array(), $data->name);
         $html .= CHtml::link($label, $data->getUrl());
 
-        $html .= '<br><em>';
-        $html .= '<small>Download from <a href="' . Yii::app()->controller->createUrl('main/search', array('iht' => $data->getCategoryTagId(), 'age' => 0))  . '" title="Browse ' . $categoryTag . ' torrents">' . ucfirst($categoryTag) . '</a>';
-        $html .= '</small>';
+        $html .= '<br /><em>';
+        $html .= '<small>Download from <a href="' . CHtml::encode(Yii::app()->controller->createUrl('main/search', array('iht' => $data->getCategoryTagId(), 'age' => 0)))  . '" title="Browse ' . $categoryTag . ' torrents">' . ucfirst($categoryTag) . '</a>';
+        $html .= '</small></em>';
 
         echo $html;
     }
