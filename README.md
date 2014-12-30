@@ -12,8 +12,10 @@ We call out torrent community to join in to develop and enhance this engine to c
 Installation
 =======
 
-**Video Tutorial For newbies**
+**Video Tutorial For newbies.**
+
 If you are more of a visual learner, watch the following video: https://www.youtube.com/watch?v=FQTdgi9tOTA
+
 For instructions on more advanced installation (i.e. database), follow the instructions below:
 
 **Step 1. Download source.**
