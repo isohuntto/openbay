@@ -6,7 +6,7 @@
         <div id="details">
             <dl class="col1">
                 <dt>Type:</dt>
-                <dd><a href="<?= $this->createUrl('main/search', array('iht' => $torrent->getCategoryTagId(), 'age' => 0)); ?>"><?= CHtml::encode(ucfirst($torrent->getCategoryTag())); ?></a></dd>
+                <dd><a href="<?= CHtml::encode($this->createUrl('main/search', array('iht' => $torrent->getCategoryTagId(), 'age' => 0))); ?>"><?= CHtml::encode(ucfirst($torrent->getCategoryTag())); ?></a></dd>
 
                 <dt>Files:</dt>
                 <dd><?= $torrent->files_count ?: "N/A" ; ?></dd>
@@ -20,8 +20,8 @@
                 <dt>Leechers:</dt>
                 <dd><?= number_format($torrent->leechers, 0, '.', ' '); ?></dd>
 
-                <br>
-                <dt>Info Hash:</dt><dd><?= CHtml::encode($torrent->hash); ?></dd>
+                <dt>Info Hash:</dt>
+                <dd><?= CHtml::encode($torrent->hash); ?></dd>
             </dl>
 
             <br><br>
