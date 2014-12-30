@@ -24,11 +24,11 @@
                 ?>
            </p>
            <p id="subm">
-               <input type="submit" title="Pirate Search" value="" accesskey="s" id="searchBtn"><font color="white">...........................</font>
+               <input type="submit" title="Pirate Search" value="" accesskey="s" id="searchBtn"><span style="color: #FFF;">...........................</span>
                <input type="submit" title="I'm Feeling Lucky" name="lucky" value="" id="luckyBtn">
            </p>
        </form>
-       </br></br>
+       <br /><br />
     </div>
-</br></br>
+<br /><br />
 <div>Powered by <a href="http://isohunt.to">isohunt.to</a></div>
