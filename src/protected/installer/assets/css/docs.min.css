@@ -99,7 +99,7 @@ body {
     vertical-align: middle;
     width: 32px;
     height: 32px;
-    background: url("/img/tpb_inst.png") no-repeat center center;
+    background: url("../../../img/tpb_inst.png") no-repeat center center;
     background-size: contain;
     margin-top: -5px;
     margin-bottom: 3px;

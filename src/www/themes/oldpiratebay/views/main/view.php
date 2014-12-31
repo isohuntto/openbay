@@ -27,10 +27,10 @@
             <br><br>
             <div style="position:relative;">
                 <div class="download">
-                    <a style="background-image: url('/img/icons/magnet.png');" href="<?= $torrent->getMagnetLink(); ?>" title="MAGNET LINK">&nbsp;MAGNET LINK</a>
+                    <a style="background-image: url('<?= Yii::app()->createUrl('/img/icons/magnet.png'); ?>');" href="<?= $torrent->getMagnetLink(); ?>" title="MAGNET LINK">&nbsp;MAGNET LINK</a>
                     <?php $downloadUrl = $torrent->getDownloadUrl();
                           if ($downloadUrl): ?>
-                    <a href="<?= $downloadUrl ?>" title=".TORRENT FILE">.TORRENT FILE</a>
+                    <a href="<?= $downloadUrl ?>" title=".TORRENT FILE" target=_blank>.TORRENT FILE</a>
                     <?php endif; ?>
                 </div>
                 <div class="nfo">
@@ -38,7 +38,7 @@
                 </div>
                 <br>
                 <div class="download">
-                    <a style="background-image: url('/img/icons/magnet.png');" href="<?= $torrent->getMagnetLink(); ?>" title="MAGNET LINK">&nbsp;MAGNET LINK</a>
+                    <a style="background-image: url('<?= Yii::app()->createUrl('/img/icons/magnet.png'); ?>');" href="<?= $torrent->getMagnetLink(); ?>" title="MAGNET LINK">&nbsp;MAGNET LINK</a>
                     <?php if ($downloadUrl) : ?>
                     <a href="<?= $downloadUrl ?>" title=".TORRENT FILE">.TORRENT FILE</a>
                     <?php endif; ?>

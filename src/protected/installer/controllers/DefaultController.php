@@ -89,7 +89,7 @@ class DefaultController extends CController
                 rename(__DIR__ . '/../../../www/installer.php', __DIR__ . '/../../../www/installer-disabled.php');
 
                 // Redirect to main page
-                $this->redirect('/');
+                $this->redirect(Yii::app()->createUrl('/'));
             }
         }
 

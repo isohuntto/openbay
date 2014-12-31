@@ -39,11 +39,11 @@ return array(
         ),
         'clientScript' => array(
             'scriptMap' => array(
-                'jquery.min.js' => '//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js',
+                'jquery.min.js' => '//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js',
             ),
             'packages' => array(
                 'base' => array(
-                    'baseUrl' => '../../www/css/',
+                    'baseUrl' => 'css/',
                     'css' => array(
                         'opb.css',
                     ),

@@ -2,7 +2,7 @@
     $cs = Yii::app()->clientScript;
     $cs->coreScriptPosition = CClientScript::POS_HEAD;
     $cs->scriptMap = array(
-        'jquery.js' => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'
+        'jquery.js' => '//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'
     );
 
     $baseUrl = $this->module->assetsUrl;
