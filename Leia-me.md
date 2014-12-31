@@ -1,10 +1,10 @@
 Openbay
 =======
-Nós, A equipe que trouxe pra você o https://isohunt.to e http://oldpiratebay.org está trazendo pra você o novo passo 
+Nós, A equipe que trouxe para vocês o https://isohunt.to e http://oldpiratebay.org está trazendo o novo passo 
 na evolução do torrent.
 
-Sites de torrent como Isohunt e The Pirate Bay nos deu lições que seria um crime ignorar.
-Sites de torrent são alvos fáceis. O código aberto do Pirate Bay vai dar a qualquer um com mínimo de conhecimento de 
+Sites de torrent como Isohunt e The Pirate Bay deram lições que seriam um crime ignorar.
+Sites de torrent são alvos fáceis. O código aberto do Pirate Bay vai dar a qualquer um com o mínimo de conhecimento, de 
 como sites e equipamentos de servidores básicos funcionam, uma oportunidade de criar uma cópia do TPB em seu próprio 
 domínio.
 
@@ -18,7 +18,7 @@ Faça o download da versão mais recente do motor em openbay.isohunt.to ou na p�
 **Passo 2. Suba o código para um servidor de sua escolha.**
 
 Suba o código fonte para um servidor de sua preferência seguindo o guia de hospedagem 
-(caos comuns há uma ferramenta chamada CPanel) ou apenas use o FTP
+(caos comuns, há uma ferramenta chamada CPanel) ou apenas use o FTP
 
 **Passo 3. Descompacte o código na pasta do servidor(opcional)**
 
@@ -43,7 +43,7 @@ assistente. Dump aqui `/src/protected/data/schema.mysql.sql`
 
 **Passo 5. Assistente**
 Parabéns! Agora você pode abrir seu domínio com qualquer navegador e seguir o guia fornecido lá. Como padrão você vai
-precisar por o título da página que vai aparecer em todas suas páginas.
+precisar por o título da Página que vai aparecer em todas suas páginas.
 
 [Instrução detalhada aqui](https://github.com/isohuntto/openbay/wiki/shared-hosting-guide)
 
