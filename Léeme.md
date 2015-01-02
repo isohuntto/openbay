@@ -47,6 +47,6 @@ Felicidades! Ahora puedes abrir tu dominio web en cualquier navegador y seguir l
 ¿Cómo colaborar?
 =======
 
-Reporta problemas, envía peticiones pull para arreglar errores, o para crear peticiones resumidas y documentadas solicitando una nueva funcionalidad (preferiblemente con una petición pull the implemente la funcionalidad)
+Reporta problemas, envía peticiones pull para arreglar errores, o para crear peticiones resumidas y documentadas solicitando una nueva funcionalidad (preferiblemente con una petición pull que implemente la funcionalidad)
 
 **Siéntete libre de contribuir al proyecto de cualquier manera que te guste!**
