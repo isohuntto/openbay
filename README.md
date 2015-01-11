@@ -53,6 +53,38 @@ to put a title which will appear on all the site's pages.
 
 [Detailed instruction here](https://github.com/isohuntto/openbay/wiki/shared-hosting-guide)
 
+
+Run using Vagrant
+=================
+
+This section shows you how to run openbay in an automatically configured VM.
+It will use MySQL and SphinxSearch from the remote server provided by IsoHunt.
+
+The scripts in the `vagrant/` directory can also serve as a
+concrete working example for setting up your own server.
+
+* Install [Vagrant](https://www.vagrantup.com/) and
+[VirtualBox](https://www.virtualbox.org/).
+* ```vagrant up```
+  * This may take a long time (≈15 min) on the first run because it builds
+the Sphinx search index.
+* Go to [http://localhost:8008/](http://localhost:8008/)
+* Under **General** choose a **Name**
+* Use local Sphinx search:
+  * At the time of this writing (Jan 2015) the Sphinx server provided by
+[http://isohunt.to/openbay/config.json](http://isohunt.to/openbay/config.json)
+is down.
+To work around this, the vagrant configuration installs Sphinx,
+initializes its index from IsoHunt's remote MySQL server
+and increases the VM's RAM size to 2.5GB.
+  * Under **Sphinx** set **our sphinx configuration** to **OFF** and enter:
+    * *host*: **127.0.0.1** (don't use *localhost*, it won't work)
+    * *port*: **3306**
+* Click **Deploy**
+
+Your new server is running at [http://localhost:8008/](http://localhost:8008/).
+
+
 How to contribute?
 ==================
 
