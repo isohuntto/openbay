@@ -13,3 +13,13 @@ src/protected/runtime/
 src/www/assets/
 
 *.log *.logs log/ logs/
+
+# OS specific useless files
+thumbs.db
+Thumbs.db
+
+# Temp files
+*~
+*.bak
+\#*#
+.\#*
