@@ -6,7 +6,7 @@ Torrent sites like isoHunt and The Pirate Bay gave us lessons that would be a cr
 
 We want to give you an opportunity to speak your mind, determine needs and be active participants in the evolution of the oldpiratebay.org. A lot of requests were received for a wide range of features but we want to emphasize the development process so we call to the colors of this enormous and devoted community to create new [features requests](https://openbay.uservoice.com/forums/279139-ideas) and code those features.
 
-We call out torrent community to join in to develop and enhance this engine to create a modern and advanced website that every user all around the world would want to use. 
+We are reaching out to the torrent community to join in to develop and enhance this engine to create a modern and advanced website that everybody would want to use. Contribute to the project using github: [Github project page](https://github.com/isohuntto/openbay).
 
 
 Installation
@@ -39,25 +39,27 @@ This config is available in original source pack at `/conf/example.nginx.conf`
 
 *Sphinx* (**advanced mode**)
 
-[Instruction here](https://github.com/isohuntto/openbay/wiki/sphinx)
+[Instructions here](https://github.com/isohuntto/openbay/wiki/sphinx)
 
 *MySQL* (**advanced mode**)
 
 Before the wizard will run you need to create a database, the wizard will create
-the schema. The dump is at `/src/protected/data/schema.mysql.sql`
+the schema. The dump is at `/src/protected/data/schema.mysql.sql`.
 
 **Step 5. Wizard**
 
 Open your website and follow the guide provided there. By default, you will need
 to put a title which will appear on all the site's pages.
 
-[Detailed instruction here](https://github.com/isohuntto/openbay/wiki/shared-hosting-guide)
+[Detailed instructions here](https://github.com/isohuntto/openbay/wiki/shared-hosting-guide)
 
 How to contribute?
 ==================
 
-Report issues, submit pull requests to fix problems, or to create summarized and
+Report issues, submit pull requests to fix problems, or create summarized and
 documented feature requests (preferably with code that implements the
-feature).
+feature) using github.
+
+[Github project page here](https://github.com/isohuntto/openbay)
 
 **Feel free to contribute to the project in any way you like!**
