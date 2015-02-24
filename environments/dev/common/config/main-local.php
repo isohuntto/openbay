@@ -16,7 +16,7 @@ return [
             ],
             'sphinx' => [
                 'class' => 'yii\sphinx\Connection',
-                'dsn' => 'mysql:host=localhost;port=9001;',
+                'dsn' => 'mysql:host=127.0.0.1;port=9306;',
                 'username' => '',
                 'password' => '',
                 'schemaCache' => 'cache',

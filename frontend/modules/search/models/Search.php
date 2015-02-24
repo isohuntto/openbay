@@ -215,7 +215,7 @@ class Search extends \yii\sphinx\ActiveRecord
             }
 
             if (empty($torrentsIds)) {
-                Yii::log('Empty last torrents ids', CLogger::LEVEL_WARNING);
+                Yii::warning('Empty last torrents ids');
             } else {
                 $query = (new Torrent())->find()->with('scrapes')
                         ->where(['id' => $torrentsIds]);

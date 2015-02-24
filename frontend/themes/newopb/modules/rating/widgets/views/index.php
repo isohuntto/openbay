@@ -10,16 +10,16 @@ use yii\helpers\Url;
 </div>
 
 <div class="rating-stat none">
-<?php for($i = $max; $i >= $min; $i=$i-$step): ?>
-    <?php $isRating = false; ?>
-    <?php foreach($ratingStats as $ratingStat): ?>
-        <?php if($ratingStat->rating == $i):?>
-            <p><strong><?= $ratingStat->rating ?></strong> (<span id="rating-stat-<?= $i ?>"><?= $ratingStat->count ?></span>)</p>
-            <?php $isRating = true; break; ?>
+    <?php for($i = $max; $i >= $min; $i=$i-$step): ?>
+        <?php $isRating = false; ?>
+        <?php foreach($ratingStats as $ratingStat): ?>
+            <?php if($ratingStat->rating == $i): ?>
+                <p><strong><?= $ratingStat->rating ?></strong> (<span id="rating-stat-<?= $i ?>"><?= $ratingStat->count ?></span>)</p>
+                <?php $isRating = true; break; ?>
+            <?php endif; ?>
+        <?php endforeach; ?>
+        <?php if(!$isRating): ?>
+            <p><strong><?= $i ?></strong> (<span id="rating-stat-<?= $i ?>">0</span>)</p>
         <?php endif; ?>
-    <? endforeach; ?>
-    <?php if(!$isRating): ?>
-        <p><strong><?= $i ?></strong> (<span id="rating-stat-<?= $i ?>">0</span>)</p>
-    <?php endif; ?>
-<?php endfor; ?>
+    <?php endfor; ?>
 </div>
