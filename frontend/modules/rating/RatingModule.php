@@ -2,6 +2,8 @@
 
 namespace frontend\modules\rating;
 
+use yii\base\Exception;
+
 class RatingModule extends \yii\base\Module
 {
     const EVENT_RATING_ADD = 'ratingAdd';
