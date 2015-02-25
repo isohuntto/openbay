@@ -10,6 +10,7 @@ use common\models\torrent\Files;
 use common\models\torrent\Scrape;
 use common\models\tag\Category;
 use yii\helpers\FileHelper;
+use common\models\User;
 
 /**
  * This is the model class for table "torrents".
@@ -32,6 +33,8 @@ use yii\helpers\FileHelper;
  *
  * @property array $scrapes
  * @property array files
+ *
+ * @property User user
  */
 class Torrent extends ActiveRecord
 {
@@ -196,5 +199,9 @@ class Torrent extends ActiveRecord
             return strtolower(Category::getTag(Category::OTHER));
         }
         return $tags[0];
+    }
+
+    public function getUser() {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 }

@@ -185,4 +185,8 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
+    public function getTorrents() {
+        return $this->hasMany(torrent\Torrent::className(), ['user_id' => 'id'])->inverseOf('user');
+    }
 }
