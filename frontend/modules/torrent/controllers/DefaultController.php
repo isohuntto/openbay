@@ -2,8 +2,11 @@
 
 namespace frontend\modules\torrent\controllers;
 
+use common\models\User;
 use Yii;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
+use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
 use yii\helpers\ArrayHelper;
 
@@ -86,12 +89,59 @@ class DefaultController extends Controller
     protected function findModel($id)
     {
         $model = Yii::$app->db->cache(function ($db) use ($id) {
-            return Torrent::findOne($id);
+            return Torrent::find()->where(['id' => $id])->with('user')->one();
         });
         if ($model !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+
+    public function actionTorrents($username)
+    {
+        $user = User::findByUsername($username);
+        if (empty($user)) {
+            throw new HttpException(404);
+        }
+
+        $query = Torrent::find();
+        $query->with('scrapes');
+        $query->where(['visible_status' => [0,3], 'user_id' => $user->id]);
+        $isSort = \Yii::$app->request->get('sort');
+        if (empty($isSort)) {
+            $query->addOrderBy(['id' => SORT_DESC]);
+        }
+
+        $torrents = new ActiveDataProvider([
+            'query' => $query,
+            'db' => \Yii::$app->db,
+            'sort' => [
+                'attributes' => [
+                    'name' => [
+                        'default' => SORT_DESC
+                    ],
+                    'created_at' => [
+                        'default' => SORT_DESC
+                    ],
+                    'size' => [
+                        'default' => SORT_DESC
+                    ],
+                    'seeders' => [
+                        'default' => SORT_DESC
+                    ],
+                    'leechers' => [
+                        'default' => SORT_DESC
+                    ]
+                ]
+            ],
+            'pagination' => [
+                'pageSize' => 35,
+            ],
+        ]);
+        return $this->render('torrents', [
+            'torrents' => $torrents,
+            'user' => $user
+        ]);
     }
 }

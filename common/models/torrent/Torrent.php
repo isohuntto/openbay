@@ -2,12 +2,11 @@
 
 namespace common\models\torrent;
 
+use common\models\User;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\db\Expression;
 use yii\behaviors\TimestampBehavior;
-use common\models\torrent\Files;
-use common\models\torrent\Scrape;
 use common\models\tag\Category;
 use yii\helpers\FileHelper;
 
@@ -170,6 +169,14 @@ class Torrent extends ActiveRecord
 
         $tags = explode(',', $this->tags);
         return array_values(array_diff($tags, $this->getServiceTags()));
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 
     public function getServiceTags()

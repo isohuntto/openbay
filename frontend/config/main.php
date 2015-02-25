@@ -50,6 +50,13 @@ return [
                         'complain' => 'complain.php',
                     ),
                 ],
+                'follower*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'sourceLanguage' => 'en',
+                    'fileMap' => array(
+                        'complain' => 'follower.php',
+                    ),
+                ],
             ],
         ],
         'request' => [
@@ -78,6 +85,9 @@ return [
         ],
     ],
     'modules' => [
+        'follower' => [
+            'class' => 'frontend\modules\follower\Module',
+        ],
     ],
     'params' => $params,
 ];

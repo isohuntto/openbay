@@ -17,7 +17,7 @@ use yii\helpers\Url;
             <p><strong><?= $ratingStat->rating ?></strong> (<span id="rating-stat-<?= $i ?>"><?= $ratingStat->count ?></span>)</p>
             <?php $isRating = true; break; ?>
         <?php endif; ?>
-    <? endforeach; ?>
+    <?php endforeach; ?>
     <?php if(!$isRating): ?>
         <p><strong><?= $i ?></strong> (<span id="rating-stat-<?= $i ?>">0</span>)</p>
     <?php endif; ?>
