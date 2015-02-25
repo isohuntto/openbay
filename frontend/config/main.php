@@ -50,6 +50,13 @@ return [
                         'complain' => 'complain.php',
                     ),
                 ],
+                'languageReport*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'sourceLanguage' => 'en',
+                    'fileMap' => array(
+                        'complain' => 'languageReport.php',
+                    ),
+                ],
             ],
         ],
         'request' => [

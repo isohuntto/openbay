@@ -22,7 +22,9 @@
         "yiisoft/yii2-redis": "2.0.2",
         "creocoder/yii2-nested-sets": "dev-master",
         "rych/bencode": "1.0.*",
-        "himiklab/yii2-recaptcha-widget" : "*"
+        "himiklab/yii2-recaptcha-widget" : "*",
+        "bower-asset/tagsinput" : "*",
+        "bower-asset/typeahead.js": "0.10.*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

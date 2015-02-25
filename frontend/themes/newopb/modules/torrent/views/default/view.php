@@ -6,7 +6,7 @@ use frontend\modules\torrent\assets\ModuleAsset;
 use frontend\modules\comment\widgets\CommentWidget;
 use frontend\modules\rating\widgets\RatingWidget;
 use frontend\modules\complain\widgets\ComplainWidget;
-
+use frontend\modules\languageReport\widgets\LanguageReportWidget;
 /* @var $this yii\web\View */
 /* @var $model frontend\modules\torrent\models\Torrent */
 
@@ -31,6 +31,9 @@ $date = new \DateTime($model->created_at);
                 <p><strong>Type:</strong> <?= Html::a(ucfirst($model->getCategoryTag()), '/search?iht=' . $model->category_id); ?></p>
                 <p><strong>Files:</strong> <a href="#" class="dashed files-numbers"><?= $model->getFilesDataProvider()->getCount(); ?></a></p>
                 <p><strong>Size:</strong> <span><?= Yii::$app->formatter->asShortSize($model->size); ?></span></p>
+            </div>
+            <div class="details-info-block">
+                <?= LanguageReportWidget::widget(['recordId' => $model->id]) ?>
             </div>
             <div class="details-info-block">
                 <p><strong>Seeders:</strong> <span><?= number_format($model->seeders, 0, '.', ' '); ?></span></p>

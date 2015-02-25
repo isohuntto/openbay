@@ -1,0 +1,84 @@
+.languageReportWidget {
+    width: 750px;
+}
+.languageReportWidget span.language {
+
+}
+.languageReportWidget span.language {
+    font-style: italic;
+}
+
+.languageReportWidget span.reporterArea {
+    display: inline-block;
+    position: relative;
+}
+
+div.fader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+div.reporterForm {
+    width: 350px;
+    display: none;
+    position: absolute;
+    padding: 15px;
+    border-radius: 10px;
+    background: white;
+    top: 30px;
+    z-index: 101;
+}
+
+div.reporterForm .bubble-arrow {
+    position:absolute; left:25px; top:-10px;
+    display:block;
+    width: 0px;
+    height: 0px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+}
+
+div.reporterForm input{
+    width: 100%;
+}
+div.reporterForm .bootstrap-tagsinput{
+    width: 100%;
+}
+
+.tt-dropdown-menu {
+    width: 422px;
+    margin-top: 2px;
+    padding: 8px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.tt-suggestion {
+    padding: 3px 20px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.tt-suggestion.tt-cursor {
+    color: #fff;
+    background-color: #0097cf;
+
+}
+
+.tt-hint {
+    opacity: 0.5 !important;
+}
+
+.tt-suggestion p {
+    margin: 0;
+}
