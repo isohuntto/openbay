@@ -4,9 +4,9 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=npb',
-            'username' => 'root',
-            'password' => '',
+            'dsn' => 'mysql:host=127.0.0.1;dbname=opb',
+            'username' => 'opb',
+            'password' => 'opb',
             'charset' => 'utf8',
             'schemaCache' => 'cache',
             'enableSchemaCache' => true,
@@ -16,11 +16,24 @@ return [
         ],
         'sphinx' => [
             'class' => 'yii\sphinx\Connection',
-            'dsn' => 'mysql:host=localhost;port=9001;',
+            'dsn' => 'mysql:host=127.0.0.1;port=9306;',
             'username' => '',
             'password' => '',
             'schemaCache' => 'cache',
             'enableSchemaCache' => true,
+        ],
+        'cache' => [
+            'class' => 'yii\redis\Cache',
+            'keyPrefix' => 'nbp_',
+            'serializer' => array(
+                'igbinary_serialize',
+                'igbinary_unserialize'
+            ),
+            'redis' => [
+                'hostname' => 'localhost',
+                'port' => 6379,
+                'database' => 5,
+            ],
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
@@ -33,19 +46,6 @@ return [
                 'password' => 'password',
                 'port' => '587',
                 'encryption' => 'tls'
-            ],
-        ],
-        'cache' => [
-            'class' => 'yii\redis\Cache',
-            'keyPrefix' => 'nbp_',
-            'serializer' => array(
-                'igbinary_serialize',
-                'igbinary_unserialize'
-            ),
-            'redis' => [
-                'hostname' => 'localhost',
-                'port' => 6350,
-                'database' => 5,
             ],
         ],
     ],
