@@ -1,17 +1,17 @@
-Openbay
+Openbay is not supported
 =======
 
-After our first OpenBay release publication on GitHub, over 3700 stars were received from you, more than 1100 forks and 41 commits been created. Surprising for us, OpenBay became one of the most popular GitHub projects in December 2014. To tell the truth, we didn’t expect such results at all but this high attention to our project had only proved to us your keen interest in the project evolution. As a result, our team’s got an idea to conduct an unprecedented campaign in the torrent industry.
+Warm greetings to all of our guests!
 
-We’re giving $50000 for the OpenBay development - let’s build a dream torrent site together!
+Isohunt team is closing down the Openbay project support and  the competition itself because of the very low activity on the project. We’ve got hold of the developers that took part in the competition and offered them a long-term cooperation.
 
-Anybody can participate. All details of the campaign, tasks and their rewards can be found [here](https://oldpiratebay.org/100k).  We want to stimulate you this way to input even more efforts to the project as now you can earn some money and not just work together on one huge project.
+We are very disappointed that your activity lowered to such a level that even a 50 000$ reward couldn’t motivate you.
 
-And, of course, in order to let this idea start we completely renewed the code that will actually become that core we will develop all together.
-We do realize that some of you are seriously frustrated, unsatisfied and even mad at us for our total OpenBay renewal! You probably think that we care shit about the efforts of those brave developers that found some extra time to improve an old version. However, we think different.
-Each and any of you can send us an e-mail([openbay@hush.com](mailto:openbay@hush.com)) about your idea or improvement that you’ve made for the old version of OpenBay. If our team finds your suggestion interesting, we are ready to negotiate with you about  it’s implementation for OpenBay 2.0 for a reward or to place your idea as a competition task for the developers all over the world on the site:[https://oldpiratebay.org/100k/developers](https://oldpiratebay.org/100k/developers)
+However, if you’re ready to cooperate and work on the project with us, send us an e-mail to openbay@hush.com.
 
-The main update is the migration to Yii2 which will allow us to develop modules maximum independent from each other. This will significantly facilitate the simultaneous development of different modules. Besides, architecture structure is now much better and easier. We hope that you will appreciate our efforts that will definitely make the collaborative work on OpenBay much easier in the future.
+Good code and less bugs to everybody!
+
+
 
 CHANGELOG:
 ----------
