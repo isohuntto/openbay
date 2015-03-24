@@ -7,7 +7,7 @@ Isohunt team is closing down the Openbay project support and  the competition it
 
 We are very disappointed that your activity lowered to such a level that even a 50 000$ reward couldn’t motivate you.
 
-However, if you’re ready to cooperate and work on the project with us, send us an e-mail to openbay@hush.com.
+However, if you’re ready to cooperate and work on the project with us, send us an e-mail to oldpiratebay@hushmail.com .
 
 Good code and less bugs to everybody!
 
