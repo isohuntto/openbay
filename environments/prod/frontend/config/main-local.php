@@ -79,5 +79,10 @@ return [
             'recordModel' => \common\models\torrent\Torrent::className(),
             'salt' => ''
         ],
+        'languageReport' => [
+            'class' => 'frontend\modules\languageReport\LanguageReportModule',
+            'recordModel' => \common\models\torrent\Torrent::className(),
+            'salt' => ''
+        ],
     ],
 ];
