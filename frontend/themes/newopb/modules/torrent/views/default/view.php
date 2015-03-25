@@ -38,7 +38,7 @@ $date = new \DateTime($model->created_at);
                 <p><strong>Info hash:</strong> <span><?= $model->hash; ?></span></p>
             </div>
             <div class="details-info-block">
-                <p><strong>Uploaded:</strong> <span><?= $date->format('j F Y, G:i') ?></span></p>
+                <p><strong>Uploaded:</strong> <span><?= $date->format('j F Y, G:i') ?> by <?= Html::a($model->user->username, ['/userprofile/default/profile', 'name' => $model->user->username]); ?></span></p>
             </div>
             <div>
                 <p><strong>Comment:</strong> <span><?= $model->comments_count ?></span> <a href="#box-comment" class="dashed id-link" >write comment</a> <i class="icon-12 dialo v-sub"></i></p>

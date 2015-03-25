@@ -79,5 +79,11 @@ return [
             'recordModel' => \common\models\torrent\Torrent::className(),
             'salt' => ''
         ],
+        'userprofile' => [
+            'class' => 'frontend\modules\userprofile\UserProfileModule',
+        ],
+        'feed' => [
+            'class' => 'frontend\modules\feed\FeedModule',
+        ],
     ],
 ];
