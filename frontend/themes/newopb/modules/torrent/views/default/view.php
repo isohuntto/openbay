@@ -6,6 +6,7 @@ use frontend\modules\torrent\assets\ModuleAsset;
 use frontend\modules\comment\widgets\CommentWidget;
 use frontend\modules\rating\widgets\RatingWidget;
 use frontend\modules\complain\widgets\ComplainWidget;
+use frontend\modules\language_content\widgets\LanguageContentWidget;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\modules\torrent\models\Torrent */
@@ -65,6 +66,7 @@ $date = new \DateTime($model->created_at);
             <div class="clear"></div>
         </ul>
     </div>
+    <?= LanguageContentWidget::widget( ['modelId' => $model->id] ) ?>
     <div class="description description-files none">
         <?= GridView::widget([
             'dataProvider' => $model->getFilesDataProvider(),

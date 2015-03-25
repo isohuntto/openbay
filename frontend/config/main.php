@@ -50,6 +50,13 @@ return [
                         'complain' => 'complain.php',
                     ),
                 ],
+                'language_content*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'sourceLanguage' => 'en',
+                    'fileMap' => array(
+                        'language_content' => 'language_content.php',
+                    ),
+                ],
             ],
         ],
         'request' => [
@@ -78,6 +85,9 @@ return [
         ],
     ],
     'modules' => [
+        'language_content' => [
+            'class' => 'frontend\modules\language_content\Module',
+        ],
     ],
     'params' => $params,
 ];
