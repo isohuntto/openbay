@@ -52,7 +52,7 @@ If you want to checkout to different path - fix path in configs.
 ```
 $ mkdir ~/www/
 $ cd ~/www/
-$ git clone https://github.com/profezz/openbay.git --branch manual
+$ git clone https://github.com/openbay/openbay.git --branch manual
 ```
 #### LNMP stack (nginx + apache + php)
 For using OpenBay you need LNMP stack. The installation of nginx, mysql and PHP-fpm will be described in this section. If you want to use other stack (for example LAMP) refer to official documentation.
@@ -122,12 +122,12 @@ $ sudo service php5-fpm restart
 
 Download sphinxsearch from official site
 ```
-$ wget http://sphinxsearch.com/files/sphinxsearch_2.2.7-release-0ubuntu12~precise_i386.deb
+$ wget http://sphinxsearch.com/files/sphinxsearch_2.2.10-release-0ubuntu12~trusty_i386.deb
 ```
 Install sphinx
 ```
 $ sudo apt-get install libodbc1 libpq5
-$ sudo dpkg -i sphinxsearch_2.2.7-release-0ubuntu12~precise_i386.deb
+$ sudo dpkg -i sphinxsearch_2.2.10-release-0ubuntu12~trusty_i386.deb
 ```
 Stop the daemon
 ```
@@ -156,7 +156,7 @@ $ cd ~/www/openbay/
 ```
 You need to install composer bower plugin
 ```
-$ composer global require "fxp/composer-asset-plugin:1.0.0"
+$ composer global require "fxp/composer-asset-plugin:1.1.1"
 ```
 And get vendor packages
 ```
